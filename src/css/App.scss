@@ -1,20 +1,13 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900s");
+// // Fonts
+// @import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900s");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 
-// Icons
+// // Icons
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css);
-
-// Resources
-@import "./css/variables";
-@import "./css/keyframes";
-@import "./css/mixins";
-@import "./css/typography";
+// @import url(https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css);
 
 .App {
-  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;

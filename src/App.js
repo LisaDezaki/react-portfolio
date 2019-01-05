@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.scss";
+import "./css/App.scss";
 import { Heading, Logo } from "./components";
 
 class App extends Component {
