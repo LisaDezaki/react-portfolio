@@ -1,0 +1,61 @@
+// Ensure the @keyframes are generated at the root level
+@at-root {
+  // We need two different ones
+  @for $i from 1 through 2 {
+    @keyframes glitch-anim-#{$i} {
+      @for $i from 0 through 20 {
+        #{percentage($i*(1/20))} {
+          clip: rect(random(80) + px, 9999px, random(80) + px, 0);
+        }
+      }
+    }
+  }
+}
+
+.heading {
+  font-size: 80px;
+  font-weight: 200;
+  letter-spacing: -8px;
+  margin: 0;
+  position: relative;
+  text-transform: lowercase;
+
+  strong {
+    font-weight: 500;
+  }
+
+  .heading__content {
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .heading__content:nth-of-type(1) {
+    position: relative;
+  }
+
+  .heading__content:not(:first-of-type) {
+    // @include absolute(0, 0, 0, 0);
+    // @include flex(c, m, row);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .heading__content:nth-of-type(2) {
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+    text-shadow: 2px 0 #0ff;
+    transform: translateX(-3px);
+  }
+
+  .heading__content:nth-of-type(3) {
+    animation: glitch-anim-2 1.5s infinite linear alternate-reverse;
+    text-shadow: -2px 0 #f0f;
+    transform: translateX(3px);
+  }
+}
