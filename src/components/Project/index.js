@@ -1,5 +1,5 @@
 import React from "react";
-import { Section } from "..";
+import { Button, Label, Section, Title } from "..";
 import "./style.scss";
 
 const Project = ({ description, img, link, name, type }) => (
@@ -8,6 +8,14 @@ const Project = ({ description, img, link, name, type }) => (
       className="project__img"
       style={{ backgroundImage: `url(./img/${img}` }}
     />
+    <div className="project__info">
+      <Title glitch className="project__name">
+        {name}
+      </Title>
+      <Label className="project__type">{type}</Label>
+      <p className="project__desc">{description}</p>
+      <Button className="project__button">Go to project</Button>
+    </div>
   </Section>
 );
 

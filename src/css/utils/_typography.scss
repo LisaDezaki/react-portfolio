@@ -51,7 +51,7 @@
   }
 
   @if $style == display4 {
-    font-size: 175%;
+    font-size: 28px;
     font-weight: 400;
     letter-spacing: -2px;
     margin: 0;
@@ -69,20 +69,26 @@
   }
 
   @if $style == label {
-    font-size: 87.5%;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.5px;
     text-transform: uppercase;
   }
 
   @if $style == body {
+    font-size: 16px;
     font-weight: 300;
   }
 
   @if $style == button {
-    font-size: 125%;
-    font-weight: 400;
-    letter-spacing: -1px;
+    // font-size: 20px;
+    // font-weight: 400;
+    // letter-spacing: -1px;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
   }
 
   @if $style == link {

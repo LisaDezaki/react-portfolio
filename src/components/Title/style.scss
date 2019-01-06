@@ -1,0 +1,10 @@
+@import "src/css/utils";
+
+.title {
+  @include font(display4);
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.glitch {
+  @include textGlitch(projectTitle, 10, 60, #fff);
+}

@@ -1,9 +1,28 @@
 @import "src/css/utils";
 
 .project {
+  @include flex(c, m, col);
+  position: relative;
 }
 
 .project__img {
   height: 600px;
   width: 800px;
+}
+
+.project__info {
+  @include absolute(2rem, 2rem, 2rem, auto);
+  @include flex(l, t, col);
+  @include shadow(3);
+  background-color: white;
+  padding: 3rem 2rem;
+  width: 360px;
+
+  .project__desc {
+    @include font(body);
+  }
+
+  .project__button {
+    align-self: center;
+  }
 }
