@@ -1,0 +1,63 @@
+@import "src/css/utils";
+
+// Ensure the @keyframes are generated at the root level
+@at-root {
+  // We need two different ones
+  @for $i from 1 through 2 {
+    @keyframes icon-anim-#{$i} {
+      @for $i from 0 through 20 {
+        #{percentage($i*(1/20))} {
+          clip: rect(random(80) + px, 9999px, random(80) + px, 0);
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  margin: 0.25rem;
+  position: relative;
+  text-decoration: none;
+
+  .fa {
+    @include flex(c, m, row);
+    color: $color-text;
+    font-size: 2.8rem;
+  }
+
+  &.icon--glitch {
+    .fa {
+      padding: 0 4px;
+    }
+
+    .fa:nth-of-type(1) {
+      position: relative;
+    }
+
+    .fa:not(:first-of-type) {
+      @include absolute(0, 0, 0, 0);
+      @include flex(c, m, row);
+      background: $color-bg;
+      clip: rect(0, 0, 0, 0);
+      opacity: 0;
+    }
+
+    .fa:nth-of-type(2) {
+      animation: icon-anim-1 2s infinite linear alternate-reverse;
+      text-shadow: 2px 0 #0ff;
+      transform: translateX(-3px);
+    }
+
+    .fa:nth-of-type(3) {
+      animation: icon-anim-2 1.5s infinite linear alternate-reverse;
+      text-shadow: -2px 0 #f0f;
+      transform: translateX(3px);
+    }
+
+    &:hover {
+      .fa:not(:first-of-type) {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -3,15 +3,38 @@
 .project {
   @include flex(c, m, col);
   position: relative;
+
+  &.align-left {
+    .project__img {
+      margin-right: 40%;
+    }
+    .project__panel {
+      @include absolute(0, 12%, 0, auto);
+    }
+  }
+
+  &.align-right {
+    .project__img {
+      margin-left: 40%;
+    }
+    .project__panel {
+      @include absolute(0, auto, 0, 12%);
+    }
+  }
 }
 
 .project__img {
+  background-position: center;
+  background-size: contain;
   height: 600px;
   width: 800px;
 }
 
+.project__panel {
+  @include flex(c, m, col);
+}
+
 .project__info {
-  @include absolute(2rem, 2rem, 2rem, auto);
   @include flex(l, t, col);
   @include shadow(3);
   background-color: white;
