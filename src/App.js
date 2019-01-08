@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import Scrollspy from "react-scrollspy";
 import "./css/App.scss";
 import {
   Heading,
+  Footer,
   Icon,
   Logo,
   Project,
   Section,
   Subheading
 } from "./components";
+import scrollspy from "./css/scrollspy.module.scss";
 
 const projects = [
   {
@@ -85,10 +88,41 @@ class App extends Component {
             Get in touch
           </Heading>
           <Subheading>I'm available in these places</Subheading>
-          <Icon glitch of="github" to="https://github.com/EllieAshton" />
-          <Icon glitch of="behance" to="https://www.behance.net/EllieAshton" />
-          <Icon glitch of="paypal" to="https://www.paypal.me/EllieOrElse" />
+          <div style={{ display: "flex" }}>
+            <Icon glitch of="github" to="https://github.com/EllieAshton" />
+            <Icon
+              glitch
+              of="behance"
+              to="https://www.behance.net/EllieAshton"
+            />
+            <Icon glitch of="paypal" to="https://www.paypal.me/EllieOrElse" />
+          </div>
         </Section>
+        <Scrollspy
+          items={projects.map(p => p.id)}
+          componentTag="div"
+          currentClassName={scrollspy.active}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center"
+          }}
+        >
+          {projects.map(project => (
+            <a
+              key={project.id}
+              className={scrollspy.link}
+              href={`#${project.id}`}
+            >
+              <hr />
+            </a>
+          ))}
+        </Scrollspy>
+        <Footer text={`C EllieAshton ${new Date().getFullYear()}`} />
       </div>
     );
   }

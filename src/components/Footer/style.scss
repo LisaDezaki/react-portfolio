@@ -1,0 +1,7 @@
+@import "src/css/utils";
+
+.footer {
+  @include flex(c, m, row);
+  @include font(label);
+  padding: 1rem;
+}
