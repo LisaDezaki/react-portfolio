@@ -85,15 +85,9 @@ class App extends Component {
             Get in touch
           </Heading>
           <Subheading>I'm available in these places</Subheading>
-          <ul style={{ display: "flex" }}>
-            <Icon glitch of="github" to="https://github.com/EllieAshton" />
-            <Icon
-              glitch
-              of="behance"
-              to="https://www.behance.net/EllieAshton"
-            />
-            <Icon glitch of="paypal" to="https://www.paypal.me/EllieOrElse" />
-          </ul>
+          <Icon glitch of="github" to="https://github.com/EllieAshton" />
+          <Icon glitch of="behance" to="https://www.behance.net/EllieAshton" />
+          <Icon glitch of="paypal" to="https://www.paypal.me/EllieOrElse" />
         </Section>
       </div>
     );

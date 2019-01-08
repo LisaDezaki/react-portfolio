@@ -6,5 +6,5 @@
 }
 
 .glitch {
-  @include textGlitch(projectTitle, 10, 60, #fff);
+  @include textGlitch(title, 2s, 60, 10, #fff);
 }

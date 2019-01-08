@@ -174,43 +174,69 @@
   }
 }
 
-//  textGlitch
+//  glitch
 
-@mixin textGlitch($name, $intensity: 20, $height: 100, $background: $color-bg) {
-  // color: rgba(0, 0, 0, 0.8);
-  position: relative;
-  $steps: $intensity;
-
-  // Ensure the @keyframes are generated at the root level
+@mixin glitch(
+  $name,
+  $duration: 2s,
+  $height: 100,
+  $steps: 20,
+  $startStep: 5,
+  $endStep: 15
+) {
   @at-root {
-    // We need two different ones
-    @for $i from 1 through 2 {
-      @keyframes #{$name}-anim-#{$i} {
-        @for $i from 0 through $steps {
-          #{percentage($i*(1/$steps))} {
-            clip: rect(random($height) + px, 9999px, random($height) + px, 0);
-          }
+    @keyframes #{$name} {
+      0% {
+        clip: rect(0, 9999px, 0, 0);
+      }
+      #{percentage(($startStep - 1)*(1/$steps))} {
+        clip: rect(0, 9999px, 0, 0);
+      }
+      @for $i from $startStep through ($endStep - 1) {
+        #{percentage($i*(1/$steps))} {
+          clip: rect(random($height) + px, 9999px, random($height) + px, 0);
         }
+      }
+      #{percentage($endStep*(1/$steps))} {
+        clip: rect(0, 9999px, 0, 0);
+      }
+      100% {
+        clip: rect(0, 9999px, 0, 0);
       }
     }
   }
+
+  animation: $name $duration infinite linear alternate-reverse;
+}
+
+//  textGlitch
+
+@mixin textGlitch(
+  $name,
+  $duration: 2s,
+  $height: 100,
+  $steps: 20,
+  $background: $color-bg
+) {
+  position: relative;
+
   &:before,
   &:after {
     @include absolute(0, 0, 0, 0);
     @include flex(c, m, row);
     background: $background;
-    clip: rect(0, 0, 0, 0);
+    // clip: rect(0, 0, 0, 0);
     content: attr(data-text);
   }
-  &:after {
-    animation: #{$name}-anim-1 ($intensity/10) + s infinite linear alternate-reverse;
-    text-shadow: 2px 0 $color-glitch-1;
-    transform: translateX(-3px);
-  }
   &:before {
-    animation: #{$name}-anim-2 ($intensity/15) + s infinite linear alternate-reverse;
-    text-shadow: -2px 0 $color-glitch-2;
-    transform: translateX(3px);
+    @include glitch(#{$name}-1, $duration, $height, $steps, 1, ($steps - 1));
+    text-shadow: 1px 0 $color-glitch-1;
+    transform: translateX(-2px);
+  }
+  &:after {
+    @include glitch(#{$name}-2, $duration, $height, $steps, 1, ($steps - 1));
+    text-shadow: -1px 0 $color-glitch-2;
+    transform: translateX(2px);
   }
 }
 

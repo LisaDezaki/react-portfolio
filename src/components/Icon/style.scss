@@ -1,19 +1,5 @@
 @import "src/css/utils";
 
-// Ensure the @keyframes are generated at the root level
-@at-root {
-  // We need two different ones
-  @for $i from 1 through 2 {
-    @keyframes icon-anim-#{$i} {
-      @for $i from 0 through 20 {
-        #{percentage($i*(1/20))} {
-          clip: rect(random(80) + px, 9999px, random(80) + px, 0);
-        }
-      }
-    }
-  }
-}
-
 .icon {
   margin: 0.25rem;
   position: relative;
@@ -43,13 +29,13 @@
     }
 
     .fa:nth-of-type(2) {
-      animation: icon-anim-1 2s infinite linear alternate-reverse;
+      @include glitch(icon1, 2s, 48, 20, 1, 20);
       text-shadow: 2px 0 #0ff;
       transform: translateX(-3px);
     }
 
     .fa:nth-of-type(3) {
-      animation: icon-anim-2 1.5s infinite linear alternate-reverse;
+      @include glitch(icon2, 2s, 48, 20, 1, 20);
       text-shadow: -2px 0 #f0f;
       transform: translateX(3px);
     }

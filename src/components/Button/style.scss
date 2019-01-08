@@ -8,7 +8,7 @@
   height: 48px;
   padding: 0.5rem 1rem;
 
-  &:hover {
-    @include textGlitch(buttonGlitch, 10, 60, #fff);
+  &:hover span {
+    @include textGlitch(buttonGlitch, 1.5s, 30, 20, #fff);
   }
 }
