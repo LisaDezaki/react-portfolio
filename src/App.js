@@ -12,24 +12,39 @@ import {
 } from "./components";
 import scrollspy from "./css/scrollspy.module.scss";
 
+import {
+  img_bitc_png,
+  img_bitc_gif,
+  img_dnd_png,
+  img_dnd_gif,
+  img_got_png,
+  img_got_gif,
+  img_lab_png,
+  img_lab_gif,
+  img_logo_png,
+  img_logo_gif
+} from "./img/index.js";
+
 const projects = [
   {
     id: "lab",
-    name: "The Lab.",
+    name: "The Lab",
     type: "Interaction",
     desc:
       "Spinners, loaders, buttons, modals, tooltips, alerts; all my favourite interface components in one place!",
     link: "/lab",
-    img: "project/lab.png"
+    img: img_lab_png,
+    imgHover: img_lab_gif
   },
   {
     id: "bitc",
-    name: "Board in the City.",
+    name: "Board in the City",
     type: "Website",
     desc:
       "Single page Wordpress theme with custom features. Board in the City CIC is a not-for-profit board games café in Southampton.",
     link: "/bitc",
-    img: "project/bitc.png"
+    img: img_bitc_png,
+    imgHover: img_bitc_gif
   },
   {
     id: "got",
@@ -37,7 +52,8 @@ const projects = [
     type: "Branding",
     desc: "Game of Thrones house sigils re-imagined as corporate logos.",
     link: "/got",
-    img: "project/got.png"
+    img: img_got_png,
+    imgHover: img_got_gif
   },
   {
     id: "logos",
@@ -46,7 +62,8 @@ const projects = [
     desc:
       "A collection of logos designed for various fictional and non-fictional clients.",
     link: "/logos",
-    img: "project/logo.png"
+    img: img_logo_png,
+    imgHover: img_logo_gif
   },
   {
     id: "dnd",
@@ -55,12 +72,15 @@ const projects = [
     desc:
       "An interactive character sheet app for the Apocalypse World table-top RPG. Currently under construction.",
     link: "/dnd",
-    img: "project/dnd.png"
+    img: img_dnd_png,
+    imgHover: img_dnd_gif
   }
 ];
 
 class App extends Component {
   render() {
+    console.log(img_lab_png);
+
     return (
       <div className="App">
         <Section height="50vh" style={{ paddingTop: "6rem" }}>
@@ -75,11 +95,12 @@ class App extends Component {
           <Project
             key={project.id}
             id={project.id}
-            name={project.name}
+            name={`${project.name}.`}
             type={project.type}
             desc={project.desc}
             link={project.link}
             img={project.img}
+            imgHover={project.imgHover || project.img}
             align={index % 2 ? "right" : "left"}
           />
         ))}
@@ -117,6 +138,7 @@ class App extends Component {
               key={project.id}
               className={scrollspy.link}
               href={`#${project.id}`}
+              title={project.name}
             >
               <hr />
             </a>

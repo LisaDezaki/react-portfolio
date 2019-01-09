@@ -3,41 +3,6 @@ import { Button, Label, Section, Title } from "..";
 import "./style.scss";
 
 class Project extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      infoPosition: 0
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll = () => {
-    // var el = document.getElementById("story_body");
-    // var minPixel = el.offsetTop;
-    // var maxPixel = minPixel + el.scrollHeight;
-    // var value = document.body.scrollTop;
-    // // respect bounds of element
-    // var percent = (value - minPixel) / (maxPixel - minPixel);
-    // percent = Math.min(1, Math.max(percent, 0)) * 100;
-    // let pos = document.getElementById(this.props.id).getBoundingClientRect();
-    // let n = vh - Math.floor(pos.top);
-    // let range = vh + pos.height;
-    // let percent = (n / range) * 100;
-    // if (percent >= 0 && percent <= 100) {
-    //   let translateY = percent - 50;
-    //   translateY = translateY - translateY * 2;
-    //   translateY *= 2;
-    //   $(el)
-    //     .find(".project-info")
-    //     .css("transform", "translateY(" + translateY + "%)");
-    // }
-    // console.log(pos);
-  };
-
   render() {
     return (
       <Section
@@ -45,10 +10,23 @@ class Project extends Component {
         className={`project align-${this.props.align}`}
         height="75vh"
       >
-        <div
+        <a className="project__link" href={this.props.link} />
+        <div className="project__img__container">
+          <img
+            className="project__img"
+            src={this.props.img}
+            alt={this.props.name}
+          />
+          <img
+            className="project__img--hover"
+            src={this.props.imgHover || this.props.img}
+            alt={this.props.name}
+          />
+        </div>
+        {/* <div
           className="project__img"
           style={{ backgroundImage: `url(./img/${this.props.img}` }}
-        />
+        /> */}
         <div className="project__panel">
           <div className="project__info">
             <Title className="project__name">{this.props.name}</Title>
