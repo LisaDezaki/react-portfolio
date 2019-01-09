@@ -3,43 +3,37 @@
 .project {
   @include flex(c, m, col);
   max-width: 100vw;
-  position: relative;
 
-  .project__link {
-    @include absolute(0, 0, 0, 0);
-    cursor: pointer;
-    z-index: 1;
+  .project__content {
+    @include flex(c, m, row);
+    max-width: 800px;
+    position: relative;
+
+    .project__link {
+      @include absolute(0, 0, 0, 0);
+      color: transparent;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    &:hover .project__img__container .project__img {
+      opacity: 0;
+    }
+    &:hover .project__img__container .project__img--hover {
+      opacity: 1;
+    }
   }
-
-  &.align-left {
-    align-items: flex-start;
-    .project__panel {
-      @include absolute(0, 12%, 0, auto);
-    }
-    .project__info {
-      @include flex(l, m, col);
-      text-align: left;
-    }
-  }
-
-  &.align-right {
-    align-items: flex-end;
-    .project__panel {
-      @include absolute(0, auto, 0, 12%);
-    }
-    .project__info {
-      @include flex(r, m, col);
-      text-align: right;
-    }
+  &:nth-of-type(odd) .project__content {
+    flex-direction: row-reverse;
+    text-align: right;
   }
 }
 
 .project__img__container {
   position: relative;
-  height: 480px;
-  width: 640px;
+  height: 360px;
+  width: 480px;
 
-  .project__img,
   .project__img--hover {
     @include absolute(0, 0, 0, 0);
   }
@@ -47,20 +41,12 @@
     opacity: 0;
   }
 }
-.project:hover .project__img__container .project__img {
-  opacity: 0;
-}
-.project:hover .project__img__container .project__img--hover {
-  opacity: 1;
-}
 
 .project__panel {
   @include flex(c, m, col);
 }
 
 .project__info {
-  width: 360px;
-
   .project__desc {
     @include font(body);
   }

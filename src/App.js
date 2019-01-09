@@ -101,7 +101,6 @@ class App extends Component {
             link={project.link}
             img={project.img}
             imgHover={project.imgHover || project.img}
-            align={index % 2 ? "right" : "left"}
           />
         ))}
         <Section height="50vh" style={{ paddingBottom: "6rem" }}>
@@ -123,6 +122,7 @@ class App extends Component {
           items={projects.map(p => p.id)}
           componentTag="div"
           currentClassName={scrollspy.active}
+          offset={-250}
           style={{
             position: "fixed",
             top: 0,

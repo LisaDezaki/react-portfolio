@@ -5,29 +5,27 @@ import "./style.scss";
 class Project extends Component {
   render() {
     return (
-      <Section
-        id={this.props.id}
-        className={`project align-${this.props.align}`}
-        height="75vh"
-      >
-        <a className="project__link" href={this.props.link} />
-        <div className="project__img__container">
-          <img
-            className="project__img"
-            src={this.props.img}
-            alt={this.props.name}
-          />
-          <img
-            className="project__img--hover"
-            src={this.props.imgHover || this.props.img}
-            alt={this.props.name}
-          />
-        </div>
-        {/* <div
-          className="project__img"
-          style={{ backgroundImage: `url(./img/${this.props.img}` }}
-        /> */}
-        <div className="project__panel">
+      <Section id={this.props.id} className="project" height="50vh">
+        <div className="project__content">
+          <a className="project__link" href={this.props.link}>
+            Go to project
+          </a>
+          <div className="project__img__container">
+            <img
+              className="project__img"
+              src={this.props.img}
+              alt={this.props.name}
+              height={360}
+              width={480}
+            />
+            <img
+              className="project__img--hover"
+              src={this.props.imgHover || this.props.img}
+              alt={this.props.name}
+              height={360}
+              width={480}
+            />
+          </div>
           <div className="project__info">
             <Title className="project__name">{this.props.name}</Title>
             <Label className="project__type">{this.props.type}</Label>
@@ -35,6 +33,14 @@ class Project extends Component {
             <Button className="project__button">Go to project</Button>
           </div>
         </div>
+
+        {/* <div
+          className="project__img"
+          style={{ backgroundImage: `url(./img/${this.props.img}` }}
+        /> */}
+        {/* <div className="project__panel">
+          
+        </div> */}
       </Section>
     );
   }
