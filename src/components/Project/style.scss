@@ -2,12 +2,81 @@
 
 .project {
   @include flex(c, m, col);
+  margin: 2rem 0;
   max-width: 100vw;
 
   .project__content {
     @include flex(c, m, row);
+    cursor: pointer;
     max-width: 800px;
     position: relative;
+    .project__img__container {
+      height: 360px;
+      width: 480px;
+      position: relative;
+      transition: all 0.25s;
+      .project__goto {
+        @include absolute(0, 0, 0, 0);
+        @include flex(c, m, row);
+        background-color: white;
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        text-align: center;
+        transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+        z-index: 5;
+        .project__goto__text {
+          @include font(button);
+          color: black;
+          font-size: 3rem;
+        }
+      }
+      .project__img,
+      .project__img--hover {
+        transition: opacity 0.5s;
+      }
+      .project__img--hover {
+        @include absolute(0, 0, 0, 0);
+        opacity: 0;
+      }
+    }
+    .project__info {
+      margin: 0 1rem;
+      .project__name {
+        transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .project__type {
+        transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+      }
+      .project__desc {
+        @include font(body);
+        transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+      }
+
+      .project__button {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &:hover {
+      .project__img__container {
+        .project__goto {
+          opacity: 0.5;
+        }
+        .project__img {
+          opacity: 0;
+        }
+        .project__img--hover {
+          opacity: 1;
+        }
+      }
+      .project__info {
+        .project__name,
+        .project__type,
+        .project__desc {
+          transform: translateX(1rem);
+        }
+      }
+    }
 
     .project__link {
       @include absolute(0, 0, 0, 0);
@@ -15,44 +84,16 @@
       cursor: pointer;
       z-index: 1;
     }
-
-    &:hover .project__img__container .project__img {
-      opacity: 0;
-    }
-    &:hover .project__img__container .project__img--hover {
-      opacity: 1;
-    }
   }
   &:nth-of-type(odd) .project__content {
     flex-direction: row-reverse;
     text-align: right;
-  }
-}
-
-.project__img__container {
-  position: relative;
-  height: 360px;
-  width: 480px;
-
-  .project__img--hover {
-    @include absolute(0, 0, 0, 0);
-  }
-  .project__img--hover {
-    opacity: 0;
-  }
-}
-
-.project__panel {
-  @include flex(c, m, col);
-}
-
-.project__info {
-  .project__desc {
-    @include font(body);
-  }
-
-  .project__button {
-    padding-left: 0;
-    padding-right: 0;
+    &:hover .project__info {
+      .project__name,
+      .project__type,
+      .project__desc {
+        transform: translateX(-1rem);
+      }
+    }
   }
 }

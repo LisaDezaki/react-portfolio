@@ -3,4 +3,5 @@
 .label {
   @include font(label);
   color: $color-subtext;
+  display: inline-block;
 }

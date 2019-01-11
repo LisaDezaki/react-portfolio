@@ -209,6 +209,39 @@
   animation: $name $duration infinite linear;
 }
 
+@mixin glitchReveal(
+  $name,
+  $duration: 2s,
+  $height: 100,
+  $steps: 20,
+  $startStep: 5,
+  $endStep: 15
+) {
+  @at-root {
+    @keyframes #{$name} {
+      0% {
+        clip: rect(0, 9999px, 0, 0);
+      }
+      #{percentage(($startStep - 1)*(1/$steps))} {
+        clip: rect(0, 9999px, 0, 0);
+      }
+      @for $i from $startStep through ($endStep - 1) {
+        #{percentage($i*(1/$steps))} {
+          clip: rect(random($height) + px, 9999px, random($height) + px, 0);
+        }
+      }
+      #{percentage($endStep*(1/$steps))} {
+        clip: rect(0, 9999px, 0, 0);
+      }
+      100% {
+        clip: rect(0, 9999px, $height, 0);
+      }
+    }
+  }
+
+  animation: $name $duration infinite linear;
+}
+
 //  textGlitch
 
 @mixin textGlitch(

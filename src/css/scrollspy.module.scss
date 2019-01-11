@@ -18,7 +18,7 @@
 
 .active {
   hr {
-    border-color: #f0f;
+    @include glitch(hrGlitch, 2s, 2, 10, 1, 9);
     border-width: 2px 0 0 0;
     width: 2rem;
   }
