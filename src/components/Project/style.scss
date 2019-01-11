@@ -7,9 +7,11 @@
 
   .project__content {
     @include flex(c, m, row);
+    color: inherit;
     cursor: pointer;
-    max-width: 800px;
+    max-width: 900px;
     position: relative;
+    text-decoration: none;
     .project__img__container {
       height: 360px;
       width: 480px;

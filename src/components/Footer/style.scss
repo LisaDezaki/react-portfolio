@@ -2,6 +2,8 @@
 
 .footer {
   @include flex(c, m, row);
-  @include font(label);
-  padding: 1rem;
+  @include font(footer);
+  margin: 0;
+  min-height: 2rem;
+  padding: 0 1rem;
 }

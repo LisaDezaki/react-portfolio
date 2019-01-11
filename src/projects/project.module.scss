@@ -1,0 +1,13 @@
+@import "src/css/utils";
+
+article {
+  margin: 0 auto;
+  max-width: 640px;
+
+  header {
+    @include flex(c, m, col);
+    @include font(display4);
+    margin: 0;
+    padding-top: 6rem;
+  }
+}

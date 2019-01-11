@@ -27,7 +27,7 @@
 
   @if $style == display1 {
     display: inline-block;
-    font-size: 500%;
+    font-size: 56px;
     font-weight: 200;
     letter-spacing: -8px;
     line-height: 1;
@@ -39,13 +39,13 @@
   }
 
   @if $style == display2 {
-    font-size: 400%;
+    font-size: 48px;
     font-weight: 400;
     letter-spacing: -8px;
   }
 
   @if $style == display3 {
-    font-size: 300%;
+    font-size: 36px;
     font-weight: 400;
     letter-spacing: -2px;
   }
@@ -76,8 +76,14 @@
   }
 
   @if $style == body {
-    font-size: 16px;
+    color: $color-text;
+    font-size: 18px;
     font-weight: 300;
+  }
+
+  @if $style == footer {
+    color: rgba(0, 0, 0, 0.36);
+    font-size: 14px;
   }
 
   @if $style == button {

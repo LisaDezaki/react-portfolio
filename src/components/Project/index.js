@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Label, Section, Title } from "..";
 import "./style.scss";
 
@@ -6,10 +7,7 @@ class Project extends Component {
   render() {
     return (
       <Section id={this.props.id} className="project">
-        <div className="project__content">
-          <a className="project__link" href={this.props.link}>
-            View project
-          </a>
+        <Link className="project__content" to={this.props.link}>
           <div className="project__img__container">
             <div className="project__goto">
               <Title className="project__goto__text" glitch>
@@ -36,7 +34,7 @@ class Project extends Component {
             <Label className="project__type">{this.props.type}</Label>
             <p className="project__desc">{this.props.desc}</p>
           </div>
-        </div>
+        </Link>
       </Section>
     );
   }
