@@ -1,0 +1,54 @@
+@import "src/css/utils";
+
+.container {
+  position: relative;
+
+  .logo {
+    @include absolute(0, 0, 0, 0);
+  }
+
+  .link {
+    @include absolute(0, 0, 0, 0);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .main {
+    position: relative;
+  }
+
+  &.glitch {
+    .left {
+      background: #fafafa;
+      opacity: 0;
+      transform: translateX(4px);
+    }
+    .right {
+      background: #fafafa;
+      opacity: 0;
+      transform: translateX(-4px);
+    }
+  }
+
+  &.glitchIntermittent {
+    .left {
+      @include glitch(logo1, 2s, 80, 20, 12, 18);
+      opacity: 1;
+    }
+    .right {
+      @include glitch(logo2, 2s, 80, 20, 14, 19);
+      opacity: 1;
+    }
+  }
+
+  &.glitchHover:hover {
+    .left {
+      @include glitch(logoHover1, 2s, 80, 20, 1, 20);
+      opacity: 1;
+    }
+    .right {
+      @include glitch(logoHover2, 2s, 80, 20, 1, 20);
+      opacity: 1;
+    }
+  }
+}

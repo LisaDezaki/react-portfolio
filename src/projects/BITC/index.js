@@ -1,19 +1,27 @@
 import React from "react";
 import "./style.scss";
-import { Footer, Heading, Label } from "../../components";
-import "../project.module.scss";
+import { Button, Footer, ProjectHeader } from "../../components";
+import img_bitc_lg from "../../img/project/bitc/bitc_lg.png";
+import css from "../project.module.scss";
 
 const ProjectBITC = () => (
   <article>
-    <header>
-      <Heading glitch>Board in the City.</Heading>
-      <Label>Website</Label>
-    </header>
-    <div>
+    <ProjectHeader name="Board in the City." label="Website" />
+    <div className={css.body}>
       <p>
         This project was done on a voluntary basis, for a board game community
         café close to where I lived at the time.
       </p>
+      <p>
+        It was built on WordPress using a custom theme, and with custom features
+        added, such as the Game Finder
+      </p>
+      {/* <p className={css.center}> */}
+      <Button border="primary" className={css.center} size="lg" glitch>
+        Go to website
+      </Button>
+      {/* </p> */}
+      <img src={img_bitc_lg} alt="board-in-the-city" className={css.left} />
     </div>
     <Footer />
   </article>

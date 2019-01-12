@@ -1,0 +1,67 @@
+@import "src/css/utils";
+
+.glitch {
+  display: inline-block;
+  position: relative;
+
+  .glitchMain {
+    @include flex(c, m, row);
+    position: relative;
+  }
+
+  .glitchLeft,
+  .glitchRight {
+    @include absolute(0, 0, 0, 0);
+    @include flex(c, m, row);
+    background-color: $color-bg;
+  }
+
+  .glitchLeft {
+    @include glitch(glitch1, 2s, 20, 20, 1, 20);
+    text-shadow: 1px 0 $color-glitch-1;
+    transform: translateX(-2px);
+  }
+
+  .glitchRight {
+    @include glitch(glitch2, 2s, 20, 20, 1, 20);
+    text-shadow: -1px 0 $color-glitch-2;
+    transform: translateX(2px);
+  }
+
+  &.glitchHover {
+    cursor: pointer;
+    .glitchLeft,
+    .glitchRight {
+      opacity: 0;
+    }
+    &:hover {
+      .glitchLeft,
+      .glitchRight {
+        opacity: 1;
+      }
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &.intensity--#{$i} .glitchLeft {
+      @include glitch(
+        glitchLeftIntensity#{$i},
+        1 + (($i - 1) * 0.25) + s,
+        48,
+        20,
+        20 - ($i * 4),
+        20
+      );
+    }
+    &.intensity--#{$i} .glitchRight {
+      @include glitch(
+        glitchRightIntensity#{$i},
+        1 + (($i - 1) * 0.25) + s,
+        48,
+        20,
+        20 - ($i * 4),
+        20
+      );
+    }
+  }
+}

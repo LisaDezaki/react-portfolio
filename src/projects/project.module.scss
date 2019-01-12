@@ -1,13 +1,37 @@
 @import "src/css/utils";
 
 article {
-  margin: 0 auto;
-  max-width: 640px;
+  @include flex(c, stretch, col);
 
   header {
     @include flex(c, m, col);
     @include font(display4);
+    animation: fadeInBottom 0.25s cubic-bezier(0, 0, 0.2, 1) forwards;
     margin: 0;
-    padding-top: 6rem;
+    opacity: 0;
+    padding: 6rem 0 3rem;
+  }
+
+  p {
+    margin: 0.5rem auto;
+    max-width: 640px;
+  }
+
+  .body {
+    @include flex(c, m, col);
+    animation: fadeInBottom 0.25s cubic-bezier(0, 0, 0.2, 1) 0.1s forwards;
+    opacity: 0;
+  }
+
+  .center {
+    align-self: center;
+  }
+
+  .left {
+    align-self: flex-start;
+  }
+
+  .right {
+    align-self: flex-end;
   }
 }

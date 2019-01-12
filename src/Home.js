@@ -4,6 +4,7 @@ import "./css/App.scss";
 import {
   Heading,
   Footer,
+  GlitchImg,
   Icon,
   Logo,
   Project,
@@ -82,13 +83,16 @@ class Home extends Component {
     return (
       <div className="Home">
         <Section height="50vh" style={{ paddingTop: "6rem" }}>
-          <Logo height={60} width={60} />
+          <Logo size={60} />
           <Heading size="xl" glitch={true}>
             <strong>Ellie</strong>
             <span>Ashton</span>
           </Heading>
           <Subheading>web • ui • ux</Subheading>
         </Section>
+        {projects.map((project, index) => (
+          <GlitchImg src={project.img} height={360} width={480} />
+        ))}
         {projects.map((project, index) => (
           <Project
             key={project.id}
@@ -106,14 +110,33 @@ class Home extends Component {
             Get in touch
           </Heading>
           <Subheading>I'm available in these places</Subheading>
-          <div style={{ display: "flex" }}>
-            <Icon glitch of="github" to="https://github.com/EllieAshton" />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              padding: "2rem",
+              width: "320px"
+            }}
+          >
             <Icon
               glitch
+              size="lg"
+              of="github"
+              to="https://github.com/EllieAshton"
+            />
+
+            <Icon
+              glitch
+              size="lg"
               of="behance"
               to="https://www.behance.net/EllieAshton"
             />
-            <Icon glitch of="paypal" to="https://www.paypal.me/EllieOrElse" />
+            <Icon
+              glitch
+              size="lg"
+              of="paypal"
+              to="https://www.paypal.me/EllieOrElse"
+            />
           </div>
         </Section>
         <Scrollspy

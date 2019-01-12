@@ -1,0 +1,177 @@
+@import "src/css/utils";
+
+$glitch-height: 360px;
+$glitch-width: 480px;
+$gap-horizontal: 1rem;
+$gap-vertical: 1rem;
+// $blend-color-1: cyan;
+// $blend-mode-1: screen;
+$blend-color-1: cyan;
+$blend-mode-1: luminosity;
+// $blend-color-2: magenta;
+// $blend-mode-2: lighten;
+$blend-color-2: darken(magenta, 25%);
+$blend-mode-2: screen;
+// $blend-color-3: yellow;
+// $blend-mode-3: luminosity;
+$blend-color-3: transparent;
+$blend-mode-3: overlay;
+// $blend-color-4: red;
+// $blend-mode-4: screen;
+$blend-color-4: transparent;
+$blend-mode-4: overlay;
+// $blend-color-5: green;
+// $blend-mode-5: luminosity;
+$blend-color-5: cyan;
+$blend-mode-5: luminosity;
+$duration: 5s;
+
+// blend modes: normal|multiply|screen|overlay|darken|lighten|color-dodge|saturation|color|luminosity;
+
+.glitch {
+  position: relative;
+  width: $glitch-width;
+  height: $glitch-height;
+  overflow: hidden;
+  margin: 0 auto;
+
+  .glitch__img:not(:first-child) {
+    @include absolute(0, 0, 0, 0);
+    // animation: glitch-anim-1-horizontal $duration infinite linear alternate;
+    // opacity: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    .glitch__img:not(:first-child) {
+      opacity: 1;
+    }
+  }
+}
+
+/* Set the background colors for the glitch images*/
+
+.glitch__img:nth-child(1) {
+  z-index: 1;
+}
+
+.glitch__img:nth-child(2) {
+  animation: glitch-anim-1-horizontal $duration infinite linear alternate;
+  background-color: $blend-color-1;
+  transform: translateX(0.5rem);
+  z-index: 0;
+  img {
+    mix-blend-mode: $blend-mode-1;
+  }
+}
+
+// .glitch__img:nth-child(3) {
+//   animation: glitch-anim-2-horizontal $duration infinite linear alternate;
+//   background-color: $blend-color-2;
+//   transform: translateX(-0.5rem);
+//   z-index: 3;
+//   img {
+//     mix-blend-mode: $blend-mode-2;
+//   }
+// }
+
+// .glitch__img:nth-child(4) {
+//   animation: glitch-anim-3-horizontal $duration infinite linear alternate;
+//   background-color: $blend-color-3;
+//   transform: translate(0, 0.5rem);
+//   z-index: 4;
+//   img {
+//     mix-blend-mode: $blend-mode-3;
+//   }
+// }
+
+// .glitch__img:nth-child(5) {
+//   animation: glitch-anim-4-horizontal $duration infinite linear alternate;
+//   background-color: $blend-color-4;
+//   transform: translate(0, -0.5rem);
+//   z-index: 5;
+//   img {
+//     mix-blend-mode: $blend-mode-4;
+//   }
+// }
+
+/* And we also apply the animations and a transform to each layer: */
+
+// .glitch:hover > .glitch__img:nth-child(2) {
+//   transform: translate($gap-horizontal, 0, 0);
+//   animation: glitch-anim-1-horizontal $duration infinite linear alternate;
+// }
+
+// .glitch:hover > .glitch__img:nth-child(3) {
+//   transform: translate(calc(-1 * $gap-horizontal), 0, 0);
+//   animation: glitch-anim-2-horizontal $duration infinite 0.5s linear alternate;
+// }
+
+// .glitch:hover > .glitch__img:nth-child(4) {
+//   transform: translate(0, calc(-1 * $gap-vertical), 0) scale(-1, -1, 1);
+//   animation: glitch-anim-3-horizontal $duration infinite 1s linear alternate;
+// }
+
+// .glitch:hover > .glitch__img:nth-child(4) {
+//   transform: translate(0, calc(-1 * $gap-vertical), 0) scale(-1, -1, 1);
+//   animation: glitch-anim-4-horizontal $duration infinite 1s linear alternate;
+// }
+
+/* Hover flash animation on last image */
+// .glitch:hover > .glitch__img:nth-child(5) {
+//   animation: glitch-anim-flash 0.5s steps(1, end) infinite;
+// }
+
+/* Keyframes: */
+
+@keyframes glitch-anim-1-horizontal {
+  @for $i from 0 through 10 {
+    $x1: random(100) * 1%;
+    $x2: random(100) * 1%;
+    #{$i * 10%} {
+      clip-path: polygon(0 $x1, 100% $x1, 100% $x2, 0% $x2);
+    }
+  }
+}
+
+@keyframes glitch-anim-2-horizontal {
+  @for $i from 0 through 10 {
+    $y1: random(100) * 1%;
+    $y2: random(100) * 1%;
+    #{$i * 10%} {
+      clip-path: polygon(0 $y1, 100% $y1, 100% $y2, 0% $y2);
+    }
+  }
+}
+
+@keyframes glitch-anim-3-horizontal {
+  @for $i from 0 through 10 {
+    $z1: random(100) * 1%;
+    $z2: random(100) * 1%;
+    #{$i * 10%} {
+      clip-path: polygon(0 $z1, 100% $z1, 100% $z2, 0% $z2);
+    }
+  }
+}
+
+@keyframes glitch-anim-4-horizontal {
+  @for $i from 0 through 10 {
+    $a1: random(100) * 1%;
+    $a2: random(100) * 1%;
+    #{$i * 10%} {
+      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+    }
+  }
+}
+
+// @keyframes glitch-anim-flash {
+//   0% {
+//     opacity: 0.2;
+//     transform: translate3d(var(--gap-horizontal), var(--gap-vertical), 0);
+//   }
+//   33%,
+//   100% {
+//     opacity: 0;
+//     transform: translate3d(0, 0, 0);
+//   }
+// }

@@ -1,9 +1,20 @@
 import React from "react";
-import "./style.scss";
+import cx from "classnames";
+import { Glitch } from "..";
+import css from "./button.module.scss";
 
-const Button = ({ children, className, glitch }) => (
-  <button className={`button ${className || ""}`}>
-    <span data-text={children}>{children}</span>
+const Button = ({ border, children, className, size }) => (
+  <button
+    className={cx(
+      css.button,
+      css[`border--${border || "transparent"}`],
+      css[`size--${size || "md"}`],
+      className
+    )}
+  >
+    <Glitch className={css.buttonText} hover intensity={5}>
+      {children}
+    </Glitch>
   </button>
 );
 

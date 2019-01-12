@@ -1,0 +1,7 @@
+@import "src/css/utils";
+
+.returnLink {
+  @include fixed(0, auto, auto, 0);
+  color: rgba(0, 0, 0, 0.54);
+  margin: 1rem;
+}
