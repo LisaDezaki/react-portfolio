@@ -16,11 +16,9 @@ const ProjectBITC = () => (
         It was built on WordPress using a custom theme, and with custom features
         added, such as the Game Finder
       </p>
-      {/* <p className={css.center}> */}
       <Button border="primary" className={css.center} size="lg" glitch>
         Go to website
       </Button>
-      {/* </p> */}
       <img src={img_bitc_lg} alt="board-in-the-city" className={css.left} />
     </div>
     <Footer />

@@ -2,31 +2,15 @@
 
 $glitch-height: 360px;
 $glitch-width: 480px;
-$gap-horizontal: 1rem;
-$gap-vertical: 1rem;
-// $blend-color-1: cyan;
-// $blend-mode-1: screen;
+$offsetX: 0.5rem;
+$offsetY: 0.5rem;
 $blend-color-1: cyan;
 $blend-mode-1: luminosity;
-// $blend-color-2: magenta;
-// $blend-mode-2: lighten;
 $blend-color-2: darken(magenta, 25%);
-$blend-mode-2: screen;
-// $blend-color-3: yellow;
-// $blend-mode-3: luminosity;
+$blend-mode-2: luminosity;
 $blend-color-3: transparent;
 $blend-mode-3: overlay;
-// $blend-color-4: red;
-// $blend-mode-4: screen;
-$blend-color-4: transparent;
-$blend-mode-4: overlay;
-// $blend-color-5: green;
-// $blend-mode-5: luminosity;
-$blend-color-5: cyan;
-$blend-mode-5: luminosity;
-$duration: 5s;
-
-// blend modes: normal|multiply|screen|overlay|darken|lighten|color-dodge|saturation|color|luminosity;
+$duration: 2s;
 
 .glitch {
   position: relative;
@@ -35,10 +19,40 @@ $duration: 5s;
   overflow: hidden;
   margin: 0 auto;
 
-  .glitch__img:not(:first-child) {
-    @include absolute(0, 0, 0, 0);
-    // animation: glitch-anim-1-horizontal $duration infinite linear alternate;
-    // opacity: 0;
+  .glitch__img {
+    &:not(:first-child) {
+      @include absolute(0, 0, 0, 0);
+    }
+
+    &:nth-child(2) {
+      animation: glitch1 $duration infinite linear alternate;
+      background-color: $blend-color-1;
+      transform: translateX(0.5rem);
+      z-index: 1;
+      img {
+        mix-blend-mode: $blend-mode-1;
+      }
+    }
+
+    &:nth-child(3) {
+      animation: glitch2 $duration infinite linear alternate;
+      background-color: $blend-color-2;
+      transform: translateX(0.5rem);
+      z-index: 2;
+      img {
+        mix-blend-mode: $blend-mode-2;
+      }
+    }
+
+    &:nth-child(3) {
+      animation: glitch3 $duration infinite linear alternate;
+      background-color: $blend-color-3;
+      transform: translateX(0.5rem);
+      z-index: 2;
+      img {
+        mix-blend-mode: $blend-mode-3;
+      }
+    }
   }
 
   &:hover {
@@ -49,129 +63,152 @@ $duration: 5s;
   }
 }
 
-/* Set the background colors for the glitch images*/
+//  Glitch 1
 
-.glitch__img:nth-child(1) {
-  z-index: 1;
-}
+$glitch1: (
+  (0%, 2%, 5%),
+  (2%, 15%, 15%),
+  (4%, 10%, 20%),
+  (6%, 1%, 2%),
+  (8%, 33%, 33%),
+  (10%, 44%, 44%),
+  (12%, 50%, 20%),
+  (14%, 70%, 70%),
+  (16%, 80%, 80%),
+  (18%, 50%, 55%),
+  (20%, 70%, 80%)
+);
 
-.glitch__img:nth-child(2) {
-  animation: glitch-anim-1-horizontal $duration infinite linear alternate;
-  background-color: $blend-color-1;
-  transform: translateX(0.5rem);
-  z-index: 0;
-  img {
-    mix-blend-mode: $blend-mode-1;
-  }
-}
-
-// .glitch__img:nth-child(3) {
-//   animation: glitch-anim-2-horizontal $duration infinite linear alternate;
-//   background-color: $blend-color-2;
-//   transform: translateX(-0.5rem);
-//   z-index: 3;
-//   img {
-//     mix-blend-mode: $blend-mode-2;
-//   }
-// }
-
-// .glitch__img:nth-child(4) {
-//   animation: glitch-anim-3-horizontal $duration infinite linear alternate;
-//   background-color: $blend-color-3;
-//   transform: translate(0, 0.5rem);
-//   z-index: 4;
-//   img {
-//     mix-blend-mode: $blend-mode-3;
-//   }
-// }
-
-// .glitch__img:nth-child(5) {
-//   animation: glitch-anim-4-horizontal $duration infinite linear alternate;
-//   background-color: $blend-color-4;
-//   transform: translate(0, -0.5rem);
-//   z-index: 5;
-//   img {
-//     mix-blend-mode: $blend-mode-4;
-//   }
-// }
-
-/* And we also apply the animations and a transform to each layer: */
-
-// .glitch:hover > .glitch__img:nth-child(2) {
-//   transform: translate($gap-horizontal, 0, 0);
-//   animation: glitch-anim-1-horizontal $duration infinite linear alternate;
-// }
-
-// .glitch:hover > .glitch__img:nth-child(3) {
-//   transform: translate(calc(-1 * $gap-horizontal), 0, 0);
-//   animation: glitch-anim-2-horizontal $duration infinite 0.5s linear alternate;
-// }
-
-// .glitch:hover > .glitch__img:nth-child(4) {
-//   transform: translate(0, calc(-1 * $gap-vertical), 0) scale(-1, -1, 1);
-//   animation: glitch-anim-3-horizontal $duration infinite 1s linear alternate;
-// }
-
-// .glitch:hover > .glitch__img:nth-child(4) {
-//   transform: translate(0, calc(-1 * $gap-vertical), 0) scale(-1, -1, 1);
-//   animation: glitch-anim-4-horizontal $duration infinite 1s linear alternate;
-// }
-
-/* Hover flash animation on last image */
-// .glitch:hover > .glitch__img:nth-child(5) {
-//   animation: glitch-anim-flash 0.5s steps(1, end) infinite;
-// }
-
-/* Keyframes: */
-
-@keyframes glitch-anim-1-horizontal {
-  @for $i from 0 through 10 {
-    $x1: random(100) * 1%;
-    $x2: random(100) * 1%;
-    #{$i * 10%} {
-      clip-path: polygon(0 $x1, 100% $x1, 100% $x2, 0% $x2);
-    }
-  }
-}
-
-@keyframes glitch-anim-2-horizontal {
-  @for $i from 0 through 10 {
-    $y1: random(100) * 1%;
-    $y2: random(100) * 1%;
-    #{$i * 10%} {
-      clip-path: polygon(0 $y1, 100% $y1, 100% $y2, 0% $y2);
-    }
-  }
-}
-
-@keyframes glitch-anim-3-horizontal {
-  @for $i from 0 through 10 {
-    $z1: random(100) * 1%;
-    $z2: random(100) * 1%;
-    #{$i * 10%} {
-      clip-path: polygon(0 $z1, 100% $z1, 100% $z2, 0% $z2);
-    }
-  }
-}
-
-@keyframes glitch-anim-4-horizontal {
-  @for $i from 0 through 10 {
-    $a1: random(100) * 1%;
-    $a2: random(100) * 1%;
-    #{$i * 10%} {
+@keyframes glitch1 {
+  @for $i from 1 through 11 {
+    $row: nth($glitch1, $i);
+    $percent: nth($row, 1);
+    $a1: nth($row, 2);
+    $a2: nth($row, 3);
+    #{$percent} {
+      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
       clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      opacity: 1;
     }
+  }
+  22%,
+  100% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 0;
   }
 }
 
-// @keyframes glitch-anim-flash {
-//   0% {
-//     opacity: 0.2;
-//     transform: translate3d(var(--gap-horizontal), var(--gap-vertical), 0);
-//   }
-//   33%,
-//   100% {
-//     opacity: 0;
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
+//  Glitch 2
+
+$glitch2: (
+  (0%, 25%, 30%),
+  (3%, 3%, 3%),
+  (5%, 5%, 20%),
+  (7%, 20%, 20%),
+  (9%, 40%, 40%),
+  (11%, 52%, 59%),
+  (13%, 60%, 60%),
+  (15%, 75%, 75%),
+  (17%, 65%, 40%),
+  (19%, 45%, 50%),
+  (20%, 14%, 33%)
+);
+
+@keyframes glitch2 {
+  @for $i from 1 through 11 {
+    $row: nth($glitch2, $i);
+    $percent: nth($row, 1);
+    $a1: nth($row, 2);
+    $a2: nth($row, 3);
+    #{$percent} {
+      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      opacity: 1;
+    }
+  }
+  22%,
+  100% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 0;
+  }
+}
+
+//  Glitch 3
+
+$glitch3: (
+  (0%, 1%, 3%),
+  (1.5%, 10%, 9%),
+  (2%, 5%, 6%),
+  (2.5%, 20%, 20%),
+  (3%, 10%, 10%),
+  (5%, 30%, 25%),
+  (5.5%, 15%, 16%),
+  (7%, 40%, 39%),
+  (8%, 20%, 21%),
+  (9%, 60%, 55%),
+  (10.5%, 30%, 31%),
+  (11%, 70%, 69%),
+  (13%, 40%, 41%),
+  (14%, 80%, 75%),
+  (14.5%, 50%, 51%),
+  (15%, 90%, 90%),
+  (16%, 60%, 60%),
+  (18%, 100%, 99%),
+  (20%, 70%, 71%)
+);
+
+@keyframes glitch3 {
+  @for $i from 1 through 19 {
+    $row: nth($glitch3, $i);
+    $percent: nth($row, 1);
+    $a1: nth($row, 2);
+    $a2: nth($row, 3);
+    #{$percent} {
+      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      opacity: 1;
+    }
+  }
+  22%,
+  100% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 0;
+  }
+}
+
+//  Glitch Text
+
+$glitchText: (
+  (0%, 20%, 21%),
+  (2%, 33%, 33%),
+  (4%, 44%, 44%),
+  (5%, 50%, 20%),
+  (6%, 70%, 70%),
+  (7%, 80%, 80%),
+  (8%, 50%, 55%),
+  (9%, 70%, 80%)
+);
+
+@keyframes glitchText {
+  @for $i from 1 through 8 {
+    $row: nth($glitch3, $i);
+    $percent: nth($row, 1);
+    $a1: nth($row, 2);
+    $a2: nth($row, 3);
+    #{$percent} {
+      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
+      opacity: 1;
+      transform: translate(calc(-1 * $offsetX), 0, 0) scale(-1, -1, -1);
+    }
+  }
+  10%,
+  100% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate(0, 0, 0) scale(1, 1, 1);
+  }
+}
