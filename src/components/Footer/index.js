@@ -1,8 +1,9 @@
 import React from "react";
-import "./style.scss";
+import cx from "classnames";
+import css from "./footer.module.scss";
 
 const Footer = ({ children, className }) => (
-  <footer className={`footer ${className || ""}`}>
+  <footer className={cx(css.footer, className)}>
     {children || <p>&copy; EllieAshton {new Date().getFullYear()}</p>}
   </footer>
 );

@@ -1,21 +1,16 @@
 @import "src/css/utils";
 
-$glitch-height: 360px;
-$glitch-width: 480px;
 $offsetX: 0.5rem;
 $offsetY: 0.5rem;
-$blend-color-1: cyan;
-$blend-mode-1: luminosity;
-$blend-color-2: darken(magenta, 25%);
-$blend-mode-2: luminosity;
-$blend-color-3: transparent;
-$blend-mode-3: overlay;
-$duration: 2s;
+$duration: 1.5s;
+
+$blend-colors: cyan, magenta, transparent, transparent;
+$blend-modes: luminosity, hard-light, overlay, overlay;
+$blend-offsets: translate(#{$offsetX}), translate(#{(-1 * $offsetX)}),
+  translate(#{$offsetX}, #{$offsetY}), translate(#{(-1 * $offsetX)});
 
 .glitch {
   position: relative;
-  width: $glitch-width;
-  height: $glitch-height;
   overflow: hidden;
   margin: 0 auto;
 
@@ -23,192 +18,20 @@ $duration: 2s;
     &:not(:first-child) {
       @include absolute(0, 0, 0, 0);
     }
+  }
 
-    &:nth-child(2) {
-      animation: glitch1 $duration infinite linear alternate;
-      background-color: $blend-color-1;
-      transform: translateX(0.5rem);
-      z-index: 1;
-      img {
-        mix-blend-mode: $blend-mode-1;
+  &:not(.glitchHover),
+  &.glitchHover:hover {
+    @for $n from 1 through 4 {
+      .glitch__img:nth-child(#{$n + 1}) {
+        animation: glitch + $n $duration infinite linear alternate;
+        background-color: nth($blend-colors, $n);
+        transform: nth($blend-offsets, $n);
+        z-index: $n;
+        img {
+          mix-blend-mode: nth($blend-modes, $n);
+        }
       }
     }
-
-    &:nth-child(3) {
-      animation: glitch2 $duration infinite linear alternate;
-      background-color: $blend-color-2;
-      transform: translateX(0.5rem);
-      z-index: 2;
-      img {
-        mix-blend-mode: $blend-mode-2;
-      }
-    }
-
-    &:nth-child(3) {
-      animation: glitch3 $duration infinite linear alternate;
-      background-color: $blend-color-3;
-      transform: translateX(0.5rem);
-      z-index: 2;
-      img {
-        mix-blend-mode: $blend-mode-3;
-      }
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-    .glitch__img:not(:first-child) {
-      opacity: 1;
-    }
-  }
-}
-
-//  Glitch 1
-
-$glitch1: (
-  (0%, 2%, 5%),
-  (2%, 15%, 15%),
-  (4%, 10%, 20%),
-  (6%, 1%, 2%),
-  (8%, 33%, 33%),
-  (10%, 44%, 44%),
-  (12%, 50%, 20%),
-  (14%, 70%, 70%),
-  (16%, 80%, 80%),
-  (18%, 50%, 55%),
-  (20%, 70%, 80%)
-);
-
-@keyframes glitch1 {
-  @for $i from 1 through 11 {
-    $row: nth($glitch1, $i);
-    $percent: nth($row, 1);
-    $a1: nth($row, 2);
-    $a2: nth($row, 3);
-    #{$percent} {
-      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      opacity: 1;
-    }
-  }
-  22%,
-  100% {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    opacity: 0;
-  }
-}
-
-//  Glitch 2
-
-$glitch2: (
-  (0%, 25%, 30%),
-  (3%, 3%, 3%),
-  (5%, 5%, 20%),
-  (7%, 20%, 20%),
-  (9%, 40%, 40%),
-  (11%, 52%, 59%),
-  (13%, 60%, 60%),
-  (15%, 75%, 75%),
-  (17%, 65%, 40%),
-  (19%, 45%, 50%),
-  (20%, 14%, 33%)
-);
-
-@keyframes glitch2 {
-  @for $i from 1 through 11 {
-    $row: nth($glitch2, $i);
-    $percent: nth($row, 1);
-    $a1: nth($row, 2);
-    $a2: nth($row, 3);
-    #{$percent} {
-      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      opacity: 1;
-    }
-  }
-  22%,
-  100% {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    opacity: 0;
-  }
-}
-
-//  Glitch 3
-
-$glitch3: (
-  (0%, 1%, 3%),
-  (1.5%, 10%, 9%),
-  (2%, 5%, 6%),
-  (2.5%, 20%, 20%),
-  (3%, 10%, 10%),
-  (5%, 30%, 25%),
-  (5.5%, 15%, 16%),
-  (7%, 40%, 39%),
-  (8%, 20%, 21%),
-  (9%, 60%, 55%),
-  (10.5%, 30%, 31%),
-  (11%, 70%, 69%),
-  (13%, 40%, 41%),
-  (14%, 80%, 75%),
-  (14.5%, 50%, 51%),
-  (15%, 90%, 90%),
-  (16%, 60%, 60%),
-  (18%, 100%, 99%),
-  (20%, 70%, 71%)
-);
-
-@keyframes glitch3 {
-  @for $i from 1 through 19 {
-    $row: nth($glitch3, $i);
-    $percent: nth($row, 1);
-    $a1: nth($row, 2);
-    $a2: nth($row, 3);
-    #{$percent} {
-      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      opacity: 1;
-    }
-  }
-  22%,
-  100% {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    opacity: 0;
-  }
-}
-
-//  Glitch Text
-
-$glitchText: (
-  (0%, 20%, 21%),
-  (2%, 33%, 33%),
-  (4%, 44%, 44%),
-  (5%, 50%, 20%),
-  (6%, 70%, 70%),
-  (7%, 80%, 80%),
-  (8%, 50%, 55%),
-  (9%, 70%, 80%)
-);
-
-@keyframes glitchText {
-  @for $i from 1 through 8 {
-    $row: nth($glitch3, $i);
-    $percent: nth($row, 1);
-    $a1: nth($row, 2);
-    $a2: nth($row, 3);
-    #{$percent} {
-      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0% $a2);
-      opacity: 1;
-      transform: translate(calc(-1 * $offsetX), 0, 0) scale(-1, -1, -1);
-    }
-  }
-  10%,
-  100% {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    transform: translate(0, 0, 0) scale(1, 1, 1);
   }
 }

@@ -17,13 +17,13 @@
   }
 
   .glitchLeft {
-    @include glitch(glitch1, 2s, 20, 20, 1, 20);
+    @include glitch(glitch1, 2s, 99);
     text-shadow: 1px 0 $color-glitch-1;
     transform: translateX(-2px);
   }
 
   .glitchRight {
-    @include glitch(glitch2, 2s, 20, 20, 1, 20);
+    @include glitch(glitch2, 2s, 99);
     text-shadow: -1px 0 $color-glitch-2;
     transform: translateX(2px);
   }
@@ -47,20 +47,14 @@
       @include glitch(
         glitchLeftIntensity#{$i},
         1 + (($i - 1) * 0.25) + s,
-        48,
-        20,
-        20 - ($i * 4),
-        20
+        $i * 20
       );
     }
     &.intensity--#{$i} .glitchRight {
       @include glitch(
         glitchRightIntensity#{$i},
         1 + (($i - 1) * 0.25) + s,
-        48,
-        20,
-        20 - ($i * 4),
-        20
+        $i * 20
       );
     }
   }

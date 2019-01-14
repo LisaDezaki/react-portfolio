@@ -4,7 +4,6 @@ import "./css/App.scss";
 import {
   Heading,
   Footer,
-  GlitchImg,
   Icon,
   Logo,
   Project,
@@ -15,15 +14,10 @@ import scrollspy from "./css/scrollspy.module.scss";
 
 import {
   img_bitc_png,
-  img_bitc_gif,
   img_dnd_png,
-  img_dnd_gif,
   img_got_png,
-  img_got_gif,
   img_lab_png,
-  img_lab_gif,
-  img_logo_png,
-  img_logo_gif
+  img_logo_png
 } from "./img/index.js";
 
 const projects = [
@@ -34,8 +28,7 @@ const projects = [
     desc:
       "Spinners, loaders, buttons, modals, tooltips, alerts; all my favourite interface components in one place!",
     link: "/lab",
-    img: img_lab_png,
-    imgHover: img_lab_gif
+    img: img_lab_png
   },
   {
     id: "bitc",
@@ -44,8 +37,7 @@ const projects = [
     desc:
       "Single page Wordpress theme with custom features. Board in the City CIC is a not-for-profit board games café in Southampton.",
     link: "/bitc",
-    img: img_bitc_png,
-    imgHover: img_bitc_gif
+    img: img_bitc_png
   },
   {
     id: "got",
@@ -53,8 +45,7 @@ const projects = [
     type: "Branding",
     desc: "Game of Thrones house sigils re-imagined as corporate logos.",
     link: "/got",
-    img: img_got_png,
-    imgHover: img_got_gif
+    img: img_got_png
   },
   {
     id: "logos",
@@ -63,8 +54,7 @@ const projects = [
     desc:
       "A collection of logos designed for various fictional and non-fictional clients.",
     link: "/logos",
-    img: img_logo_png,
-    imgHover: img_logo_gif
+    img: img_logo_png
   },
   {
     id: "dnd",
@@ -73,8 +63,7 @@ const projects = [
     desc:
       "An interactive character sheet app for the Apocalypse World table-top RPG. Currently under construction.",
     link: "/dnd",
-    img: img_dnd_png,
-    imgHover: img_dnd_gif
+    img: img_dnd_png
   }
 ];
 
@@ -83,16 +72,13 @@ class Home extends Component {
     return (
       <div className="Home">
         <Section height="50vh" style={{ paddingTop: "6rem" }}>
-          <Logo size={60} />
-          <Heading size="xl" glitch={true}>
+          <Logo glitch size={60} />
+          <Heading size="xl" glitch>
             <strong>Ellie</strong>
             <span>Ashton</span>
           </Heading>
           <Subheading>web • ui • ux</Subheading>
         </Section>
-        {projects.map((project, index) => (
-          <GlitchImg src={project.img} height={360} width={480} />
-        ))}
         {projects.map((project, index) => (
           <Project
             key={project.id}
@@ -106,7 +92,7 @@ class Home extends Component {
           />
         ))}
         <Section height="50vh" style={{ paddingBottom: "6rem" }}>
-          <Heading size="l" glitch={true}>
+          <Heading size="lg" glitch={true}>
             Get in touch
           </Heading>
           <Subheading>I'm available in these places</Subheading>

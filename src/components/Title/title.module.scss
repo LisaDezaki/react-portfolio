@@ -6,5 +6,5 @@
 }
 
 .glitch {
-  @include textGlitch(title, 2s, 60, 10, #fff);
+  animation: glitchText 1.5s infinite linear;
 }

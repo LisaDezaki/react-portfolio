@@ -1,5 +1,16 @@
 @import "src/css/utils";
 
+$glitchText: (
+  (0%, 20%, 21%),
+  (2%, 33%, 33%),
+  (4%, 44%, 44%),
+  (5%, 50%, 20%),
+  (6%, 70%, 70%),
+  (7%, 80%, 80%),
+  (8%, 50%, 55%),
+  (9%, 70%, 80%)
+);
+
 .project {
   @include flex(c, m, col);
   margin: 2rem 0;
@@ -20,7 +31,6 @@
       .project__goto {
         @include absolute(0, 0, 0, 0);
         @include flex(c, m, row);
-        background-color: white;
         color: rgba(0, 0, 0, 0.5);
         opacity: 0;
         text-align: center;
@@ -28,17 +38,10 @@
         z-index: 5;
         .project__goto__text {
           @include font(button);
+          animation: glitchText 4s infinite linear;
           color: black;
           font-size: 3rem;
         }
-      }
-      .project__img,
-      .project__img--hover {
-        transition: opacity 0.5s;
-      }
-      .project__img--hover {
-        @include absolute(0, 0, 0, 0);
-        opacity: 0;
       }
     }
     .project__info {
@@ -63,12 +66,6 @@
       .project__img__container {
         .project__goto {
           opacity: 0.5;
-        }
-        .project__img {
-          opacity: 0;
-        }
-        .project__img--hover {
-          opacity: 1;
         }
       }
       .project__info {

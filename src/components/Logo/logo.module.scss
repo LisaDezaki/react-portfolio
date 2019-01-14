@@ -32,22 +32,22 @@
 
   &.glitchIntermittent {
     .left {
-      @include glitch(logo1, 2s, 80, 20, 12, 18);
+      animation: glitch3 3s linear infinite alternate;
       opacity: 1;
     }
     .right {
-      @include glitch(logo2, 2s, 80, 20, 14, 19);
+      animation: glitch1 3s linear infinite alternate;
       opacity: 1;
     }
   }
 
   &.glitchHover:hover {
     .left {
-      @include glitch(logoHover1, 2s, 80, 20, 1, 20);
+      animation: glitchContinuous 3s infinite linear alternate;
       opacity: 1;
     }
     .right {
-      @include glitch(logoHover2, 2s, 80, 20, 1, 20);
+      animation: glitchContinuous 3.5s infinite linear alternate-reverse;
       opacity: 1;
     }
   }

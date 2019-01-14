@@ -1,9 +1,10 @@
 import React from "react";
-import "./style.scss";
+import cx from "classnames";
+import css from "./section.module.scss";
 
 const Section = ({ children, className, height, id, style }) => (
   <section
-    className={`section ${className || ""}`}
+    className={cx(css.section, className)}
     id={id}
     style={{ height, ...style }}
   >

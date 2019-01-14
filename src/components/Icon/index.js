@@ -1,31 +1,42 @@
 import React from "react";
+import cx from "classnames";
 import { Link } from "react-router-dom";
-import "./style.scss";
+import css from "./icon.module.scss";
 
 const Icon = ({ className, glitch, of, size, to }) => {
   if (to) {
     return (
       <Link
-        className={`icon icon--size-${size || "md"} ${
-          glitch ? "icon--glitch" : ""
-        } ${className || ""}`}
+        className={cx(
+          css.icon,
+          glitch ? css[`icon--glitch`] : null,
+          css[`icon--size-${size || "md"}`],
+          className
+        )}
         to={to}
       >
-        <i className={`fa fa-${of}`} />
-        {glitch && <i className={`fa fa-${of}`} />}
-        {glitch && <i className={`fa fa-${of}`} />}
+        <i className={cx(css.fa, "fa", `fa-${of}`)} />
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
       </Link>
     );
   } else {
     return (
       <div
-        className={`icon icon--size-${size || "md"} ${
-          glitch ? "icon--glitch" : ""
-        } ${className || ""}`}
+        className={cx(
+          css.icon,
+          glitch ? css[`icon--glitch`] : null,
+          css[`icon--size-${size || "md"}`],
+          className
+        )}
       >
-        <i className={`fa fa-${of}`} />
-        {glitch && <i className={`fa fa-${of}`} />}
-        {glitch && <i className={`fa fa-${of}`} />}
+        <i className={cx(css.fa, "fa", `fa-${of}`)} />
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
+        {glitch && <i className={cx(css.fa, "fa", `fa-${of}`)} />}
       </div>
     );
   }

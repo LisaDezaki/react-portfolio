@@ -5,18 +5,20 @@
   margin: 0;
   position: relative;
 
-  &.size-xl {
+  &.size--md {
+    font-size: 54px;
+  }
+  &.size--lg {
+    font-size: 64px;
+  }
+  &.size--xl {
     font-size: 80px;
   }
 
-  &.size-l {
-    font-size: 64px;
-  }
-
   .heading__content {
-    color: $color-text;
     letter-spacing: -8px;
     font-weight: 400;
+    padding: 0 0.5rem;
 
     strong {
       font-weight: 500;
@@ -29,25 +31,25 @@
     }
   }
 
-  .heading__content:nth-of-type(1) {
+  .heading__content:nth-child(1) {
+    color: $color-text;
     position: relative;
   }
 
-  .heading__content:not(:first-of-type) {
+  .heading__content:nth-child(n + 2) {
     @include absolute(0, 0, 0, 0);
     @include flex(c, m, row);
     background: $color-bg;
-    clip: rect(0, 0, 0, 0);
   }
 
-  .heading__content:nth-of-type(2) {
-    @include glitch(heading1, 2s, 80, 20, 12, 18);
+  .heading__content:nth-child(2) {
+    animation: glitch2 3s infinite linear alternate;
     text-shadow: 2px 0 #0ff;
     transform: translateX(-3px);
   }
 
-  .heading__content:nth-of-type(3) {
-    @include glitch(heading2, 2s, 80, 20, 14, 19);
+  .heading__content:nth-child(3) {
+    animation: glitch3 3s infinite linear alternate;
     text-shadow: -2px 0 #f0f;
     transform: translateX(3px);
   }
