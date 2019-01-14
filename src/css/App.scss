@@ -17,8 +17,9 @@
 }
 
 .Home {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  @include flex(stretch, t, col);
+
+  section {
+    @include flex(c, m, col);
+  }
 }

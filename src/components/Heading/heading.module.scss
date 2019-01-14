@@ -5,18 +5,20 @@
   margin: 0;
   position: relative;
 
-  &.size--md {
+  &.size--md .heading__content {
     font-size: 54px;
+    letter-spacing: -7px;
   }
-  &.size--lg {
+  &.size--lg .heading__content {
     font-size: 64px;
+    letter-spacing: -8px;
   }
-  &.size--xl {
+  &.size--xl .heading__content {
     font-size: 80px;
+    letter-spacing: -9px;
   }
 
   .heading__content {
-    letter-spacing: -8px;
     font-weight: 400;
     padding: 0 0.5rem;
 

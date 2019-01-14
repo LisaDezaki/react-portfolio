@@ -8,7 +8,6 @@ import Label from "./Label";
 import Logo from "./Logo";
 import Project from "./Project";
 import ProjectHeader from "./ProjectHeader";
-import Section from "./Section";
 import Subheading from "./Subheading";
 import Title from "./Title";
 
@@ -23,7 +22,6 @@ export {
   Logo,
   Project,
   ProjectHeader,
-  Section,
   Subheading,
   Title
 };

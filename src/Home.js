@@ -1,15 +1,7 @@
 import React, { Component } from "react";
 import Scrollspy from "react-scrollspy";
 import "./css/App.scss";
-import {
-  Heading,
-  Footer,
-  Icon,
-  Logo,
-  Project,
-  Section,
-  Subheading
-} from "./components";
+import { Heading, Footer, Icon, Logo, Project, Subheading } from "./components";
 import scrollspy from "./css/scrollspy.module.scss";
 
 import {
@@ -71,27 +63,29 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Section height="50vh" style={{ paddingTop: "6rem" }}>
+        <section style={{ height: "50vh", paddingTop: "6rem" }}>
           <Logo glitch size={60} />
           <Heading size="xl" glitch>
             <strong>Ellie</strong>
             <span>Ashton</span>
           </Heading>
           <Subheading>web • ui • ux</Subheading>
-        </Section>
-        {projects.map((project, index) => (
-          <Project
-            key={project.id}
-            id={project.id}
-            name={`${project.name}.`}
-            type={project.type}
-            desc={project.desc}
-            link={project.link}
-            img={project.img}
-            imgHover={project.imgHover || project.img}
-          />
-        ))}
-        <Section height="50vh" style={{ paddingBottom: "6rem" }}>
+        </section>
+        <section>
+          {projects.map((project, index) => (
+            <Project
+              key={project.id}
+              id={project.id}
+              name={`${project.name}.`}
+              type={project.type}
+              desc={project.desc}
+              link={project.link}
+              img={project.img}
+              imgHover={project.imgHover || project.img}
+            />
+          ))}
+        </section>
+        <section style={{ height: "50vh", paddingBottom: "6rem" }}>
           <Heading size="lg" glitch={true}>
             Get in touch
           </Heading>
@@ -124,7 +118,7 @@ class Home extends Component {
               to="https://www.paypal.me/EllieOrElse"
             />
           </div>
-        </Section>
+        </section>
         <Scrollspy
           items={projects.map(p => p.id)}
           componentTag="div"

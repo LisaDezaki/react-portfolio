@@ -2,7 +2,7 @@
 
 $offsetX: 0.5rem;
 $offsetY: 0.5rem;
-$duration: 1.5s;
+$duration: 2s;
 
 $blend-colors: cyan, magenta, transparent, transparent;
 $blend-modes: luminosity, hard-light, overlay, overlay;
@@ -17,10 +17,11 @@ $blend-offsets: translate(#{$offsetX}), translate(#{(-1 * $offsetX)}),
   .glitch__img {
     &:not(:first-child) {
       @include absolute(0, 0, 0, 0);
+      overflow: hidden;
     }
   }
 
-  &:not(.glitchHover),
+  &.glitchActive,
   &.glitchHover:hover {
     @for $n from 1 through 4 {
       .glitch__img:nth-child(#{$n + 1}) {
