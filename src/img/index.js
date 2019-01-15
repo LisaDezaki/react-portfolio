@@ -5,28 +5,63 @@ import logo_r from "./logo/logo_glitch_r.png";
 
 //  projects
 import img_bitc_png from "./project/bitc.png";
-import img_bitc_gif from "./project/bitc.gif";
 import img_dnd_png from "./project/dnd.png";
-import img_dnd_gif from "./project/dnd.gif";
 import img_got_png from "./project/got.png";
-import img_got_gif from "./project/got.gif";
 import img_lab_png from "./project/lab.png";
-import img_lab_gif from "./project/lab.gif";
 import img_logo_png from "./project/logo.png";
-import img_logo_gif from "./project/logo.gif";
+
+//  bitc
+import bitc_lg from "./project/bitc/bitc_lg.png";
+
+//  got
+import got_stark from "./project/got/01Stark.png";
+import got_lannister from "./project/got/02Lannister.png";
+import got_baratheon from "./project/got/03Baratheon.png";
+import got_targaryen from "./project/got/04Targaryen.png";
+import got_tyrell from "./project/got/05Tyrell.png";
+import got_greyjoy from "./project/got/06Greyjoy.png";
+import got_martell from "./project/got/07Martell.png";
+import got_tully from "./project/got/08Tully.png";
+import got_baelish from "./project/got/09Baelish.png";
+import got_arryn from "./project/got/10Arryn.png";
+
+//  logos
+
+import logo_brokenarrow from "./project/logo/01BrokenArrow.png";
+import logo_enigma from "./project/logo/02Enigma.png";
+import logo_euravian from "./project/logo/03Euravian.png";
+import logo_fourthwall from "./project/logo/04FourthWall.png";
+import logo_howla from "./project/logo/05Howla.png";
+import logo_orbit from "./project/logo/06Orbit.png";
+import logo_splash from "./project/logo/07Splash.png";
+import logo_venus from "./project/logo/08Venus.png";
 
 export {
   logo_l,
   logo_m,
   logo_r,
   img_bitc_png,
-  img_bitc_gif,
   img_dnd_png,
-  img_dnd_gif,
   img_got_png,
-  img_got_gif,
   img_lab_png,
-  img_lab_gif,
   img_logo_png,
-  img_logo_gif
+  bitc_lg,
+  got_stark,
+  got_lannister,
+  got_baratheon,
+  got_targaryen,
+  got_tyrell,
+  got_greyjoy,
+  got_martell,
+  got_tully,
+  got_baelish,
+  got_arryn,
+  logo_brokenarrow,
+  logo_enigma,
+  logo_euravian,
+  logo_fourthwall,
+  logo_howla,
+  logo_orbit,
+  logo_splash,
+  logo_venus
 };

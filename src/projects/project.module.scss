@@ -3,6 +3,13 @@
 article {
   @include flex(c, stretch, col);
 
+  .returnLink {
+    @include fixed(0, auto, auto, 0);
+    color: rgba(0, 0, 0, 0.54);
+    margin: 1rem;
+    z-index: 1;
+  }
+
   header {
     @include flex(c, m, col);
     @include font(display4);
@@ -12,15 +19,23 @@ article {
     padding: 6rem 0 3rem;
   }
 
-  p {
-    margin: 0.5rem auto;
-    max-width: 640px;
-  }
-
   .body {
     @include flex(c, m, col);
     animation: fadeInBottom 0.25s cubic-bezier(0, 0, 0.2, 1) 0.1s forwards;
+    margin: 0 auto 0;
     opacity: 0;
+    width: 800px;
+
+    p {
+      font-size: 21px;
+      margin: 1rem auto;
+      width: 640px;
+    }
+
+    img {
+      margin: 1rem auto;
+      max-width: 640px;
+    }
   }
 
   .center {

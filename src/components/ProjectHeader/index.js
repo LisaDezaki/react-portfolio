@@ -1,12 +1,14 @@
 import React from "react";
-import { Heading, Label, Logo } from "..";
+import { Heading, Label } from "..";
 import css from "./projectheader.module.scss";
 
-const ProjectHeader = ({ label, name }) => (
-  <header>
-    <Heading glitch>{name}</Heading>
+const ProjectHeader = ({ img, label, name }) => (
+  <header className={css.projectHeader}>
+    <Heading glitch size="md">
+      {name}
+    </Heading>
     <Label>{label}</Label>
-    <Logo glitch="hover" className={css.returnLink} size={48} to="/" />
+    <img className={css.projectHeader__img} src={img} alt="" />
   </header>
 );
 

@@ -32,11 +32,11 @@
 
   &.glitchIntermittent {
     .left {
-      animation: glitch3 3s linear infinite alternate;
+      animation: glitch3 3s linear infinite alternate 0.5s;
       opacity: 1;
     }
     .right {
-      animation: glitch1 3s linear infinite alternate;
+      animation: glitch1 3s linear infinite alternate 1s;
       opacity: 1;
     }
   }

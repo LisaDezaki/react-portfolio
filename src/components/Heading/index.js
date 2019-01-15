@@ -7,7 +7,7 @@ const Heading = ({ children, glitch, size }) => (
     className={cx(
       css.heading,
       glitch ? css.glitch : null,
-      css[`size--${size}`]
+      css[`size--${size || "md"}`]
     )}
   >
     <span className={css.heading__content}>{children}</span>

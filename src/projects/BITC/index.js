@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.scss";
-import { Button, Footer, ProjectHeader } from "../../components";
+import { Button, Footer, Logo, ProjectHeader } from "../../components";
 import img_bitc_lg from "../../img/project/bitc/bitc_lg.png";
 import css from "../project.module.scss";
 
 const ProjectBITC = () => (
   <article>
+    <Logo glitch="hover" className={css.returnLink} size={48} to="/" />
     <ProjectHeader name="Board in the City." label="Website" />
     <div className={css.body}>
       <p>
