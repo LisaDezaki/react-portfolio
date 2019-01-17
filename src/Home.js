@@ -60,11 +60,15 @@ const projects = [
 ];
 
 class Home extends Component {
+  componentDidMount = () => {
+    document.title = "EllieAshton";
+  };
+
   render() {
     return (
       <div className="Home">
         <section style={{ height: "50vh", paddingTop: "6rem" }}>
-          <Logo glitch size={60} />
+          <Logo size={60} />
           <Heading size="xl" glitch>
             <strong>Ellie</strong>
             <span>Ashton</span>

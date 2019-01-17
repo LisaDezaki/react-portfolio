@@ -3,52 +3,37 @@
 .container {
   position: relative;
 
-  .logo {
-    @include absolute(0, 0, 0, 0);
-  }
-
   .link {
     @include absolute(0, 0, 0, 0);
     cursor: pointer;
     z-index: 1;
   }
 
-  .main {
-    position: relative;
+  .logo:not(.main) {
+    @include absolute(0, 0, 0, 0);
   }
 
-  &.glitch {
-    .left {
-      background: #fafafa;
-      opacity: 0;
-      transform: translateX(4px);
-    }
-    .right {
-      background: #fafafa;
-      opacity: 0;
-      transform: translateX(-4px);
-    }
+  .left {
+    animation: glitch3 3s linear infinite alternate;
+    background: #fafafa;
+    transform: translateX(3px);
   }
 
-  &.glitchIntermittent {
-    .left {
-      animation: glitch3 3s linear infinite alternate 0.5s;
-      opacity: 1;
-    }
-    .right {
-      animation: glitch1 3s linear infinite alternate 1s;
-      opacity: 1;
-    }
+  .right {
+    animation: glitch1 3s linear infinite alternate-reverse;
+    background: #fafafa;
+    opacity: 0;
+    transform: translateX(-3px);
   }
 
-  &.glitchHover:hover {
+  &:hover {
     .left {
-      animation: glitchContinuous 3s infinite linear alternate;
-      opacity: 1;
+      animation: glitchContinuous 2s infinite linear alternate;
+      transform: translateX(5px);
     }
     .right {
-      animation: glitchContinuous 3.5s infinite linear alternate-reverse;
-      opacity: 1;
+      animation: glitchContinuous 2.5s infinite linear alternate-reverse;
+      transform: translateX(-5px);
     }
   }
 }

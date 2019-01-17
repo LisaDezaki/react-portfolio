@@ -13,6 +13,12 @@ import img_logo_png from "./project/logo.png";
 //  bitc
 import bitc_lg from "./project/bitc/bitc_lg.png";
 
+//  dnd
+import dnd_profile from "./project/dnd/dnd_profile.png";
+import dnd_inventory from "./project/dnd/dnd_inventory.png";
+import dnd_equipment from "./project/dnd/dnd_equipment.png";
+import dnd_skills from "./project/dnd/dnd_skills.png";
+
 //  got
 import got_stark from "./project/got/01Stark.png";
 import got_lannister from "./project/got/02Lannister.png";
@@ -46,6 +52,10 @@ export {
   img_lab_png,
   img_logo_png,
   bitc_lg,
+  dnd_profile,
+  dnd_inventory,
+  dnd_equipment,
+  dnd_skills,
   got_stark,
   got_lannister,
   got_baratheon,

@@ -1,5 +1,6 @@
-import ProjectBITC from "./BITC";
-import ProjectGOT from "./GOT";
+import ProjectBitC from "./BitC";
+import ProjectDnD from "./DnD";
+import ProjectGoT from "./GoT";
 import ProjectLogos from "./Logos";
 
-export { ProjectBITC, ProjectGOT, ProjectLogos };
+export { ProjectBitC, ProjectDnD, ProjectGoT, ProjectLogos };

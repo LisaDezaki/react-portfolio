@@ -1,67 +1,57 @@
 @import "src/css/utils";
 
-.icon {
+.iconWrap {
   margin: 0;
   position: relative;
   text-decoration: none;
 
-  &--size-sm .fa {
+  &.icon--size-sm .icon {
     font-size: 1.8rem;
   }
-  &--size-md .fa {
+  &.icon--size-md .icon {
     font-size: 2.4rem;
   }
-  &--size-lg .fa {
+  &.icon--size-lg .icon {
     font-size: 3.2rem;
   }
 
-  .fa {
+  .link {
+    @include absolute(0, 0, 0, 0);
+    color: transparent;
+    z-index: 1;
+  }
+
+  .icon {
     @include flex(c, m, row);
     padding: 0 0.5rem;
   }
 
   &.icon--glitch {
-    .fa:nth-child(1) {
+    .icon:nth-of-type(1) {
       position: relative;
     }
 
-    .fa:not(:first-child) {
+    .icon:not(:first-of-type) {
       @include absolute(0, 0, 0, 0);
       @include flex(c, m, row);
       background: $color-bg;
       opacity: 0;
     }
 
-    .fa:nth-child(2) {
+    .icon:nth-of-type(2) {
       animation: glitchContinuous 2s infinite linear alternate;
-      color: cyan;
-      mix-blend-mode: soft-light;
-      transform: translateX(-2px);
-    }
-
-    .fa:nth-child(3) {
-      animation: glitchContinuous 2.5s infinite linear alternate-reverse 0.5s;
-      color: magenta;
-      mix-blend-mode: soft-light;
-      transform: translateX(2px);
-    }
-
-    .fa:nth-child(4) {
-      animation: glitchContinuous 3s infinite linear alternate 1s;
-      color: $color-text;
-      text-shadow: -2px 0 magenta;
+      text-shadow: 2px 0 cyan;
       transform: translateX(-4px);
     }
 
-    .fa:nth-child(5) {
-      animation: glitchContinuous 3.5s infinite linear alternate-reverse 1.5s;
-      color: $color-text;
+    .icon:nth-of-type(3) {
+      animation: glitchContinuous 3s infinite linear alternate-reverse;
       text-shadow: -2px 0 magenta;
       transform: translateX(4px);
     }
 
     &:hover {
-      .fa:not(:first-child) {
+      .icon:not(:first-child) {
         opacity: 1;
       }
     }

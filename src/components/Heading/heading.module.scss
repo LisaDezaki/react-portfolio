@@ -3,7 +3,9 @@
 .heading {
   line-height: 1;
   margin: 0;
+  max-width: 480px;
   position: relative;
+  text-align: center;
 
   &.size--md .heading__content {
     font-size: 54px;
