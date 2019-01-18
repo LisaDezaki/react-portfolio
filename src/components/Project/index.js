@@ -75,8 +75,8 @@ class Project extends Component {
             glitch={this.state.hover}
             src={this.props.img}
             alt={this.props.name}
-            height={360}
-            width={480}
+            // height={360}
+            // width={480}
           />
         </div>
         <div className={css.project__info}>

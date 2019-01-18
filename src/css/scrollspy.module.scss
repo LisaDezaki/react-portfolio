@@ -1,24 +1,27 @@
 @import "utils";
 
 .link {
-  color: transparent;
-  height: 2px;
-  margin-left: 1rem;
-  padding: 0.5rem;
-  text-decoration: none;
+  display: none;
+  @include bp-min($bp-md) {
+    color: transparent;
+    display: block;
+    height: 2px;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
 
-  hr {
-    border: 1px solid rgba($color-text, 0.5);
-    border-width: 1px 0 0 0;
-    margin: 0;
-    transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
-    width: 1rem;
-  }
-}
-
-.active {
-  hr {
-    border-width: 2px 0 0 0;
-    width: 2rem;
+    hr {
+      border: 1px solid rgba($color-text, 0.5);
+      border-width: 1px 0 0 0;
+      margin: 0;
+      transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+      width: 1rem;
+    }
+    &.active {
+      hr {
+        border-width: 2px 0 0 0;
+        width: 2rem;
+      }
+    }
   }
 }

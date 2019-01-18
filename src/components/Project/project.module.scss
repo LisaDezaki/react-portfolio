@@ -1,31 +1,35 @@
 @import "src/css/utils";
 
-$glitchText: (
-  (0%, 20%, 21%),
-  (2%, 33%, 33%),
-  (4%, 44%, 44%),
-  (5%, 50%, 20%),
-  (6%, 70%, 70%),
-  (7%, 80%, 80%),
-  (8%, 50%, 55%),
-  (9%, 70%, 80%)
-);
-
 .project {
-  @include flex(c, m, row);
-  margin: 2rem auto;
+  @include flex(c, m, col);
+  margin: 4rem auto;
   max-width: 800px;
   position: relative;
+  text-align: center;
   text-decoration: none;
+  width: calc(100% - 2rem);
+  @include bp-min($bp-sm) {
+    flex-direction: row;
+    margin: 2rem auto;
+    text-align: left;
+    width: 100%;
+    &:nth-of-type(odd) {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+  }
+
   .project__img__container {
-    height: 360px;
-    width: 480px;
     position: relative;
     transition: all 0.25s;
+    width: 100%;
+    @include bp-min($bp-sm) {
+      max-width: 480px;
+      min-width: 50%;
+    }
     .project__goto {
       @include absolute(0, 0, 0, 0);
       @include flex(c, m, row);
-      background-color: $color-bg;
       color: rgba(0, 0, 0, 0.5);
       opacity: 0;
       text-align: center;
@@ -41,7 +45,6 @@ $glitchText: (
         &:nth-child(n + 1) {
           @include absolute(0, 0, 0, 0);
           @include flex(c, m, row);
-          background-color: $color-bg;
         }
         &:nth-child(2) {
           animation: glitchContinuous 4s infinite linear;
@@ -58,20 +61,17 @@ $glitchText: (
   }
   .project__info {
     margin: 0 1rem;
-    .project__name {
+    .project__name,
+    .project__type,
+    .project__desc {
+      margin: 0.5rem auto;
       transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .project__type {
-      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+      transition-delay: 0.1s;
     }
     .project__desc {
-      @include font(body);
-      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
-    }
-
-    .project__button {
-      padding-left: 0;
-      padding-right: 0;
+      transition-delay: 0.2s;
     }
   }
   &:hover {
@@ -88,22 +88,11 @@ $glitchText: (
       }
     }
   }
-
-  .project__link {
-    @include absolute(0, 0, 0, 0);
-    color: transparent;
-    cursor: pointer;
-    z-index: 1;
-  }
-  &:nth-of-type(odd) {
-    flex-direction: row-reverse;
-    text-align: right;
-    &:hover .project__info {
-      .project__name,
-      .project__type,
-      .project__desc {
-        transform: translateX(-1rem);
-      }
+  &:nth-of-type(odd):hover .project__info {
+    .project__name,
+    .project__type,
+    .project__desc {
+      transform: translateX(-1rem);
     }
   }
 }

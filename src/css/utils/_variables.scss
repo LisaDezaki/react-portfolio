@@ -1,4 +1,11 @@
-// Brands
+// Breakpoints
+$bp-xs: 480;
+$bp-sm: 640;
+$bp-md: 800;
+$bp-lg: 1024;
+$bp-xl: 1280;
+
+// Colors
 $color-bg: #fafafa;
 $color-text: #242424;
 $color-subtext: #c4c4c4;
@@ -6,10 +13,10 @@ $color-glitch-1: #0ff;
 $color-glitch-2: #f0f;
 
 // Typography
-$line-height-base: 1.6;
 $font-size-base: 1rem;
 $font-body: "Work Sans", "Arial", sans-serif;
 $font-btn: "Open Sans", sans-serif;
+$line-height-base: 1.6;
 
 // Buttons
 $btn-default-color: $color-text;

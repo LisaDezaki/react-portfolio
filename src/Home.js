@@ -67,8 +67,8 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <section style={{ height: "50vh", paddingTop: "6rem" }}>
-          <Logo size={60} />
+        <section>
+          <Logo />
           <Heading size="xl" glitch>
             <strong>Ellie</strong>
             <span>Ashton</span>
@@ -89,17 +89,17 @@ class Home extends Component {
             />
           ))}
         </section>
-        <section style={{ height: "50vh", paddingBottom: "6rem" }}>
-          <Heading size="lg" glitch={true}>
+        <section>
+          <Heading size="md" glitch={true}>
             Get in touch
           </Heading>
           <Subheading>I'm available in these places</Subheading>
           <div
             style={{
               display: "flex",
-              justifyContent: "space-around",
-              padding: "2rem",
-              width: "320px"
+              justifyContent: "center",
+              padding: "1rem",
+              width: "100%"
             }}
           >
             <Icon

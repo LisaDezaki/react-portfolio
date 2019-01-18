@@ -8,16 +8,28 @@
   text-align: center;
 
   &.size--md .heading__content {
-    font-size: 54px;
-    letter-spacing: -7px;
+    font-size: 36px;
+    letter-spacing: -4px;
+    @include bp-min($bp-sm) {
+      font-size: 48px;
+      letter-spacing: -5px;
+    }
   }
   &.size--lg .heading__content {
-    font-size: 64px;
-    letter-spacing: -8px;
+    font-size: 56px;
+    letter-spacing: -6px;
+    @include bp-min($bp-sm) {
+      font-size: 64px;
+      letter-spacing: -7px;
+    }
   }
   &.size--xl .heading__content {
-    font-size: 80px;
-    letter-spacing: -9px;
+    font-size: 64px;
+    letter-spacing: -7px;
+    @include bp-min($bp-sm) {
+      font-size: 80px;
+      letter-spacing: -9px;
+    }
   }
 
   .heading__content {

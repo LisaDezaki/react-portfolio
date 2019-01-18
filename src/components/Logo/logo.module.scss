@@ -1,12 +1,23 @@
 @import "src/css/utils";
 
 .container {
+  height: 48px;
+  width: 48px;
   position: relative;
+  @include bp-min($bp-sm) {
+    height: 60px;
+    width: 60px;
+  }
 
   .link {
     @include absolute(0, 0, 0, 0);
     cursor: pointer;
     z-index: 1;
+  }
+
+  .logo {
+    height: 100%;
+    width: 100%;
   }
 
   .logo:not(.main) {
