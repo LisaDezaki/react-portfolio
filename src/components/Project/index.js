@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { GlitchImg, Label, Title } from "..";
 import css from "./project.module.scss";
 
@@ -20,14 +21,27 @@ class Project extends Component {
   };
 
   render() {
+    const { desc, id, img, link, name, type } = this.props;
+    const { hover } = this.state;
+
+    const externalLink = link.charAt(0) !== "/";
+
     return (
-      <a
-        id={this.props.id}
+      <div
+        id={id}
         className={css.project}
-        href={this.props.link}
         onMouseEnter={this.linkHover}
         onMouseLeave={this.linkUnhover}
       >
+        {externalLink ? (
+          <a className={css.projectLink} href={link}>
+            Go to project
+          </a>
+        ) : (
+          <Link className={css.projectLink} to={link}>
+            Go to project
+          </Link>
+        )}
         <div className={css.project__img__container}>
           <div className={css.project__goto}>
             {[1, 2, 3].map(n => (
@@ -38,17 +52,18 @@ class Project extends Component {
           </div>
           <GlitchImg
             className={css.project__img}
-            glitch={this.state.hover}
-            src={this.props.img}
-            alt={this.props.name}
+            glitch={hover}
+            src={img}
+            alt={name}
           />
         </div>
         <div className={css.project__info}>
-          <Title className={css.project__name}>{this.props.name}</Title>
-          <Label className={css.project__type}>{this.props.type}</Label>
-          <p className={css.project__desc}>{this.props.desc}</p>
+          <Title className={css.project__name}>{name}</Title>
+          <Label className={css.project__type}>{type}</Label>
+          <p className={css.project__desc}>{desc}</p>
         </div>
-      </a>
+        {/* </ProjectLink> */}
+      </div>
     );
   }
 }

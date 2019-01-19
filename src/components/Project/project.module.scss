@@ -26,6 +26,12 @@
     max-width: 800px;
   }
 
+  .projectLink {
+    @include absolute(0, 0, 0, 0);
+    color: transparent;
+    z-index: 20;
+  }
+
   .project__img__container {
     position: relative;
     transition: all 0.25s;
