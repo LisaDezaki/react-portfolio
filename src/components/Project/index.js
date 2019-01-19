@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { GlitchImg, Label, Title } from "..";
 import css from "./project.module.scss";
 
@@ -22,10 +21,10 @@ class Project extends Component {
 
   render() {
     return (
-      <Link
+      <a
         id={this.props.id}
         className={css.project}
-        to={this.props.link}
+        href={this.props.link}
         onMouseEnter={this.linkHover}
         onMouseLeave={this.linkUnhover}
       >
@@ -49,7 +48,7 @@ class Project extends Component {
           <Label className={css.project__type}>{this.props.type}</Label>
           <p className={css.project__desc}>{this.props.desc}</p>
         </div>
-      </Link>
+      </a>
     );
   }
 }

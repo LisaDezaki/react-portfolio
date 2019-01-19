@@ -19,7 +19,7 @@ const projects = [
     type: "Interaction",
     desc:
       "Spinners, loaders, buttons, modals, tooltips, alerts; all my favourite interface components in one place!",
-    link: "/lab",
+    link: "http://lab.ellieashton.me",
     img: img_lab_png
   },
   {
@@ -113,7 +113,7 @@ class Home extends Component {
               glitch
               size="lg"
               of="behance"
-              to="https://www.behance.net/EllieAshton"
+              to="https://www.behance.net/EllieOrElse"
             />
             <Icon
               glitch
