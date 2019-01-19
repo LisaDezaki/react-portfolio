@@ -12,7 +12,7 @@ class ProjectBitC extends Component {
   render() {
     return (
       <article>
-        <Logo glitch="hover" className={css.returnLink} size={48} to="/" />
+        <Logo glitch="hover" className={css.returnLink} to="/" />
         <ProjectHeader name="Board in the City." label="Website" />
         <div className={css.body}>
           <p>
@@ -23,9 +23,7 @@ class ProjectBitC extends Component {
             It was built on WordPress using a custom theme, and with custom
             features added, such as the Game Finder
           </p>
-          <Button border="primary" className={css.center} size="lg" glitch>
-            Go to website
-          </Button>
+          <Button>Go to website</Button>
           <img src={img_bitc_lg} alt="board-in-the-city" className={css.left} />
         </div>
         <Footer />

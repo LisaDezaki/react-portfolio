@@ -15,14 +15,14 @@
 }
 
 .subheading {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 300;
   letter-spacing: -1px;
   margin: 0;
   position: relative;
   text-transform: lowercase;
   @include bp-min($bp-sm) {
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: -2px;
   }
 

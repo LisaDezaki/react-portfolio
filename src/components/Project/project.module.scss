@@ -25,7 +25,7 @@
     width: 100%;
     @include bp-min($bp-sm) {
       max-width: 480px;
-      min-width: 50%;
+      min-width: 60%;
     }
     .project__goto {
       @include absolute(0, 0, 0, 0);
@@ -37,7 +37,7 @@
       z-index: 5;
       .project__goto__text {
         @include font(button);
-        color: black;
+        color: #242424;
         font-size: 3rem;
         &:nth-child(1) {
           animation: glitchText 4s infinite linear;
@@ -47,14 +47,14 @@
           @include flex(c, m, row);
         }
         &:nth-child(2) {
-          animation: glitchContinuous 4s infinite linear;
+          animation: glitchContinuous 3s infinite linear;
           text-shadow: 2px 0 #0ff;
-          transform: translateX(-3px);
+          transform: translateX(-4px);
         }
         &:nth-child(3) {
           animation: glitchContinuous 4s infinite linear 1s;
           text-shadow: -2px 0 magenta;
-          transform: translateX(3px);
+          transform: translateX(4px);
         }
       }
     }
@@ -77,7 +77,11 @@
   &:hover {
     .project__img__container {
       .project__goto {
+        background-color: #fafafa;
         opacity: 0.5;
+        .project__goto__text {
+          background-color: #fafafa;
+        }
       }
     }
     .project__info {

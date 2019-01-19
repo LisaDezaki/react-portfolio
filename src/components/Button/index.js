@@ -1,20 +1,21 @@
 import React from "react";
 import cx from "classnames";
-import { Glitch } from "..";
 import css from "./button.module.scss";
 
 const Button = ({ border, children, className, size }) => (
   <button
     className={cx(
-      css.button,
+      css.buttonGlitch,
       css[`border--${border || "transparent"}`],
       css[`size--${size || "md"}`],
       className
     )}
   >
-    <Glitch className={css.buttonText} hover intensity={5}>
-      {children}
-    </Glitch>
+    {[1, 2, 3].map(n => (
+      <div key={n} className={css.buttonContentOuter}>
+        <div className={css.buttonContentInner}>{children}</div>
+      </div>
+    ))}
   </button>
 );
 

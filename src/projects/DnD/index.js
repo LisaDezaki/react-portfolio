@@ -17,7 +17,7 @@ class ProjectDnD extends Component {
   render() {
     return (
       <article>
-        <Logo glitch="hover" className={css.returnLink} size={48} to="/" />
+        <Logo glitch="hover" className={css.returnLink} to="/" />
         <ProjectHeader
           name="Dungeons &amp; Dragons Character Sheet App."
           label="Coming Soon"

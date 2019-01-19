@@ -21,7 +21,7 @@ class ProjectLogos extends Component {
   render() {
     return (
       <article>
-        <Logo glitch="hover" className={css.returnLink} size={48} to="/" />
+        <Logo glitch="hover" className={css.returnLink} to="/" />
         <ProjectHeader name="Various Logos." label="Branding" />
         <div className={css.body}>
           <img src={logo_brokenarrow} alt="Broken Arrow" />

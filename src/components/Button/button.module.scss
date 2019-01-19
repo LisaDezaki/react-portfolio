@@ -1,34 +1,67 @@
 @import "src/css/utils";
 
-.button {
+$btnHeight: 48px;
+
+.buttonGlitch {
+  // outline: 1px solid red;
   @include font(button);
-  background: transparent;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   margin: 1rem auto;
+  padding: 0;
+  position: relative;
 
-  &.border--primary {
-    border: 2px solid rgba(0, 0, 0, 0.32);
-  }
-  &.border--none {
-    border: none;
+  .buttonContentOuter {
+    .buttonContentInner {
+      background-color: #242424;
+      border-radius: $btnHeight * 0.5;
+      color: white;
+      height: $btnHeight;
+      padding: 1rem 2rem;
+    }
+
+    &:nth-of-type(n + 2) {
+      @include absolute(0, 0, 0, 0);
+    }
+
+    &:nth-of-type(2) {
+      animation: glitch1 4s infinite linear;
+      transform: translateX(2px);
+      .buttonContentInner {
+        box-shadow: -4px 0 cyan;
+      }
+    }
+
+    &:nth-of-type(3) {
+      animation: glitch3 5s infinite linear reverse;
+      transform: translateX(-2px);
+      .buttonContentInner {
+        box-shadow: 4px 0 magenta;
+      }
+    }
   }
 
-  .buttonText {
-    color: $color-text;
+  &:hover .buttonContentOuter {
+    &:nth-of-type(2) {
+      animation: glitchContinuous 2s infinite linear;
+    }
+    &:nth-of-type(3) {
+      animation: glitchContinuous 3s infinite linear reverse;
+    }
   }
 
-  &.size--sm .buttonText {
+  &.size--sm .button {
     font-size: 85%;
     height: 36px;
     padding: 0.25rem 0.5rem;
   }
-  &.size--md .buttonText {
+  &.size--md .button {
     font-size: 100%;
     height: 48px;
     padding: 0.5rem 1rem;
   }
-  &.size--lg .buttonText {
+  &.size--lg .button {
     font-size: 120%;
     height: 60px;
     padding: 1rem 2rem;

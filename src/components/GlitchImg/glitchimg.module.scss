@@ -29,7 +29,7 @@ $blend-offsets: translate(#{$offsetX}), translate(#{(-1 * $offsetX)}),
   &.glitchHover:hover {
     @for $n from 1 through 4 {
       .glitch__img:nth-child(#{$n + 1}) {
-        animation: glitch + $n $duration infinite linear alternate;
+        animation: glitch + $n $duration infinite linear;
         background-color: nth($blend-colors, $n);
         transform: nth($blend-offsets, $n);
         z-index: $n;
