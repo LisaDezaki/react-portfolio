@@ -11,9 +11,18 @@
 .App {
   @include font(body);
   background-color: $color-bg;
+  color: $color-text;
   font-family: "Work Sans", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
   margin: 0;
   min-height: 100vh;
+  @include bp-min($bp-xs) {
+    font-size: 110%;
+  }
+  @include bp-min($bp-lg) {
+    font-size: 125%;
+  }
 }
 
 .Home {

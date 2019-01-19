@@ -3,14 +3,18 @@
 .project {
   @include flex(c, m, col);
   margin: 4rem auto;
-  max-width: 800px;
+  max-width: 320px;
   position: relative;
   text-align: center;
   text-decoration: none;
   width: calc(100% - 2rem);
   @include bp-min($bp-sm) {
+    max-width: 480px;
+  }
+  @include bp-min($bp-md) {
     flex-direction: row;
     margin: 2rem auto;
+    max-width: 640px;
     text-align: left;
     width: 100%;
     &:nth-of-type(odd) {
@@ -18,13 +22,17 @@
       text-align: right;
     }
   }
+  @include bp-min($bp-lg) {
+    max-width: 800px;
+  }
 
   .project__img__container {
     position: relative;
     transition: all 0.25s;
+    max-width: 320px;
     width: 100%;
-    @include bp-min($bp-sm) {
-      max-width: 480px;
+    @include bp-min($bp-md) {
+      max-width: 640px;
       min-width: 60%;
     }
     .project__goto {
@@ -37,7 +45,7 @@
       z-index: 5;
       .project__goto__text {
         @include font(button);
-        color: #242424;
+        color: #464646;
         font-size: 3rem;
         &:nth-child(1) {
           animation: glitchText 4s infinite linear;
@@ -64,8 +72,11 @@
     .project__name,
     .project__type,
     .project__desc {
-      margin: 0.5rem auto;
       transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      margin: 0.25rem auto;
+      @include bp-min($bp-lg) {
+        margin: 0.5rem auto;
+      }
     }
     .project__type {
       transition-delay: 0.1s;
@@ -84,19 +95,23 @@
         }
       }
     }
-    .project__info {
-      .project__name,
-      .project__type,
-      .project__desc {
-        transform: translateX(1rem);
+    @include bp-min($bp-md) {
+      .project__info {
+        .project__name,
+        .project__type,
+        .project__desc {
+          transform: translateX(1rem);
+        }
       }
     }
   }
-  &:nth-of-type(odd):hover .project__info {
-    .project__name,
-    .project__type,
-    .project__desc {
-      transform: translateX(-1rem);
+  @include bp-min($bp-md) {
+    &:nth-of-type(odd):hover .project__info {
+      .project__name,
+      .project__type,
+      .project__desc {
+        transform: translateX(-1rem);
+      }
     }
   }
 }

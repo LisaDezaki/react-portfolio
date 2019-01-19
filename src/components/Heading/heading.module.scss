@@ -1,11 +1,17 @@
 @import "src/css/utils";
 
 .heading {
-  line-height: 1;
+  line-height: 0.75;
   margin: 0;
   max-width: 480px;
   position: relative;
   text-align: center;
+  @include bp-min($bp-sm) {
+    line-height: 0.85;
+  }
+  @include bp-min($bp-md) {
+    line-height: 1;
+  }
 
   &.size--md .heading__content {
     font-size: 36px;
@@ -16,19 +22,19 @@
     }
   }
   &.size--lg .heading__content {
-    font-size: 56px;
-    letter-spacing: -6px;
+    font-size: 48px;
+    letter-spacing: -5px;
+    @include bp-min($bp-xs) {
+      font-size: 56px;
+      letter-spacing: -6px;
+    }
     @include bp-min($bp-sm) {
       font-size: 64px;
       letter-spacing: -7px;
     }
-  }
-  &.size--xl .heading__content {
-    font-size: 64px;
-    letter-spacing: -7px;
-    @include bp-min($bp-sm) {
-      font-size: 80px;
-      letter-spacing: -9px;
+    @include bp-min($bp-md) {
+      font-size: 72px;
+      letter-spacing: -8px;
     }
   }
 

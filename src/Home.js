@@ -69,7 +69,7 @@ class Home extends Component {
       <div className="Home">
         <section>
           <Logo />
-          <Heading size="xl" glitch>
+          <Heading size="lg" glitch>
             <strong>Ellie</strong>
             <span>Ashton</span>
           </Heading>
