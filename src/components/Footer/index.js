@@ -4,7 +4,7 @@ import css from "./footer.module.scss";
 
 const Footer = ({ children, className }) => (
   <footer className={cx(css.footer, className)}>
-    {children || <p>&copy; EllieAshton {new Date().getFullYear()}</p>}
+    {children || <p>&copy; Lisa Dezaki {new Date().getFullYear()}</p>}
   </footer>
 );
 
