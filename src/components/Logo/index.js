@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cx from "classnames";
-import img_l from "./img/logo_glitch_l.png";
-import img_m from "./img/logo_normal.png";
-import img_h from "./img/logo_glitch_m.png";
-import img_r from "./img/logo_glitch_r.png";
+import img_l from "./img/newlogo_glitch_l.png";
+import img_m from "./img/newlogo_m.png";
+import img_h from "./img/newlogo_glitch_m.png";
+import img_r from "./img/newlogo_glitch_r.png";
 import logo from "./logo.module.scss";
 
 const Logo = ({ className, to }) => (

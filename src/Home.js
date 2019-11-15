@@ -105,6 +105,13 @@ class Home extends Component {
             <Icon
               glitch
               size="lg"
+              of="behance"
+              to="https://www.behance.net/LisaTheArtful"
+            />
+
+            <Icon
+              glitch
+              size="lg"
               of="github"
               to="https://github.com/LisaDezaki"
             />
@@ -112,8 +119,8 @@ class Home extends Component {
             <Icon
               glitch
               size="lg"
-              of="behance"
-              to="https://www.behance.net/LisaTheArtful"
+              of="linkedin"
+              to="https://www.linkedin.com/in/lisa-dezaki-8b9088196/"
             />
           </div>
         </section>
