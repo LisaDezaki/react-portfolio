@@ -26,7 +26,8 @@
 }
 
 .Home {
-  @include flex(stretch, t, col);
+  @include flex(c, t, col);
+  padding: 2rem 0;
 
   section {
     @include flex(c, m, col);

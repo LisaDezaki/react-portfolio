@@ -19,7 +19,7 @@ const projects = [
     type: "Interaction",
     desc:
       "Spinners, loaders, buttons, modals, tooltips, alerts; all my favourite interface components in one place!",
-    link: "http://lab.ellieashton.me",
+    link: "http://lab.lisadezaki.me",
     img: img_lab_png
   },
   {
@@ -61,17 +61,17 @@ const projects = [
 
 class Home extends Component {
   componentDidMount = () => {
-    document.title = "EllieAshton";
+    document.title = "LisaDezaki";
   };
 
   render() {
     return (
       <div className="Home">
+        <Logo />
         <section>
-          <Logo />
           <Heading size="lg" glitch>
-            <strong>Ellie</strong>
-            <span>Ashton</span>
+            <strong>Lisa</strong>
+            <span>Dezaki</span>
           </Heading>
           <Subheading>web • ui • ux</Subheading>
         </section>
@@ -106,20 +106,14 @@ class Home extends Component {
               glitch
               size="lg"
               of="github"
-              to="https://github.com/EllieAshton"
+              to="https://github.com/LisaDezaki"
             />
 
             <Icon
               glitch
               size="lg"
               of="behance"
-              to="https://www.behance.net/EllieOrElse"
-            />
-            <Icon
-              glitch
-              size="lg"
-              of="paypal"
-              to="https://www.paypal.me/EllieOrElse"
+              to="https://www.behance.net/LisaTheArtful"
             />
           </div>
         </section>
