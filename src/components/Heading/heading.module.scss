@@ -18,7 +18,7 @@
     letter-spacing: -4px;
     @include bp-min($bp-sm) {
       font-size: 48px;
-      letter-spacing: -5px;
+      letter-spacing: -3px;
     }
   }
   &.size--lg .heading__content {
@@ -26,15 +26,15 @@
     letter-spacing: -5px;
     @include bp-min($bp-xs) {
       font-size: 56px;
-      letter-spacing: -6px;
+      letter-spacing: -4px;
     }
     @include bp-min($bp-sm) {
       font-size: 64px;
-      letter-spacing: -7px;
+      letter-spacing: -5px;
     }
     @include bp-min($bp-md) {
       font-size: 72px;
-      letter-spacing: -8px;
+      letter-spacing: -6px;
     }
   }
 
@@ -43,13 +43,11 @@
     padding: 0 0.5rem;
 
     strong {
-      font-weight: 500;
-      text-transform: lowercase;
+      font-weight: 400;
     }
 
     span {
       font-weight: 200;
-      text-transform: lowercase;
     }
   }
 
