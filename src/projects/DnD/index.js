@@ -11,7 +11,7 @@ import css from "../project.module.scss";
 
 class ProjectDnD extends Component {
   componentDidMount = () => {
-    document.title = "D&D Character App // EllieAshton";
+    document.title = "D&D Character App // Lisa Dezaki";
   };
 
   render() {

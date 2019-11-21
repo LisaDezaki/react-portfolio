@@ -6,9 +6,10 @@ import logo_r from "./logo/logo_glitch_r.png";
 //  projects
 import img_bitc_png from "./project/bitc.png";
 import img_dnd_png from "./project/dnd.png";
-import img_got_png from "./project/got.png";
+import img_fet_png from "./project/fet.png";
+// import img_got_png from "./project/got.png";
 import img_lab_png from "./project/lab.png";
-import img_logo_png from "./project/logo.png";
+// import img_logo_png from "./project/logo.png";
 
 //  bitc
 import bitc_lg from "./project/bitc/bitc_lg.png";
@@ -48,9 +49,10 @@ export {
   logo_r,
   img_bitc_png,
   img_dnd_png,
-  img_got_png,
+  img_fet_png,
+  // img_got_png,
   img_lab_png,
-  img_logo_png,
+  // img_logo_png,
   bitc_lg,
   dnd_profile,
   dnd_inventory,

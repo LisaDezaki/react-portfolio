@@ -2,9 +2,9 @@
 
 .title {
   @include font(display4);
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.88);
 }
 
 .glitch {
-  animation: glitchText 1.5s infinite linear;
+  animation: glitchText 500ms infinite linear;
 }

@@ -7,15 +7,16 @@ import scrollspy from "./css/scrollspy.module.scss";
 import {
   img_bitc_png,
   img_dnd_png,
-  img_got_png,
+  img_fet_png,
+  // img_got_png,
   img_lab_png,
-  img_logo_png
+  // img_logo_png,
 } from "./img/index.js";
 
 const projects = [
   {
     id: "lab",
-    name: "The Lab",
+    name: "CSS Lab",
     type: "Interaction",
     desc:
       "Spinners, loaders, buttons, modals, tooltips, alerts; all my favourite interface components in one place!",
@@ -31,31 +32,39 @@ const projects = [
     link: "/bitc",
     img: img_bitc_png
   },
-  {
-    id: "got",
-    name: "Game of Thrones Logos",
-    type: "Branding",
-    desc: "Game of Thrones house sigils re-imagined as corporate logos.",
-    link: "/got",
-    img: img_got_png
-  },
-  {
-    id: "logos",
-    name: "Various Logos",
-    type: "Branding",
-    desc:
-      "A collection of logos designed for various fictional and non-fictional clients.",
-    link: "/logos",
-    img: img_logo_png
-  },
+  // {
+  //   id: "got",
+  //   name: "Game of Thrones Logos",
+  //   type: "Branding",
+  //   desc: "Game of Thrones house sigils re-imagined as corporate logos.",
+  //   link: "/got",
+  //   img: img_got_png
+  // },
+  // {
+  //   id: "logos",
+  //   name: "Various Logos",
+  //   type: "Branding",
+  //   desc:
+  //     "A collection of logos designed for various fictional and non-fictional clients.",
+  //   link: "/logos",
+  //   img: img_logo_png
+  // },
   {
     id: "dnd",
     name: "Character Sheet App",
     type: "Under Construction",
     desc:
-      "An interactive character sheet app for the Apocalypse World table-top RPG. Currently under construction.",
+      "An interactive character sheet design for Dungeons & Dragons or similar RPGs. Currently under construction.",
     link: "/dnd",
     img: img_dnd_png
+  },
+  {
+    id: "fet",
+    name: "Fetlife App Redesign",
+    type: "App Design",
+    desc: "A modern redesign of the FetLife app for iOS and Android.",
+    link: "/fetlife",
+    img: img_fet_png
   }
 ];
 

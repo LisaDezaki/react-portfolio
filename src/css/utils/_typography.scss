@@ -51,8 +51,8 @@
   }
 
   @if $style == display4 {
-    font-size: 28px;
-    font-weight: 400;
+    font-size: 21px;
+    font-weight: 500;
     letter-spacing: -2px;
     margin: 0;
   }
@@ -69,16 +69,16 @@
   }
 
   @if $style == label {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.75px;
     text-transform: uppercase;
   }
 
   @if $style == body {
     color: $color-text;
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 400;
   }
 
   @if $style == footer {

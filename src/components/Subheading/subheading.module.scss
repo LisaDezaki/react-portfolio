@@ -15,16 +15,9 @@
 }
 
 .subheading {
-  font-size: 28px;
-  font-weight: 200;
-  letter-spacing: -1px;
+  @include font(label);
   margin: 0 auto;
   position: relative;
-  text-transform: lowercase;
-  @include bp-min($bp-sm) {
-    font-size: 32px;
-    letter-spacing: -2px;
-  }
 
   strong {
     font-weight: 500;

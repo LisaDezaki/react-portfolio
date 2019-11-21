@@ -34,17 +34,17 @@
 
   .left {
     animation: glitch3 3s linear infinite alternate;
-    background: #fafafa;
+    background: $color-bg;
     transform: translateX(2px);
   }
 
   .right {
     animation: glitch1 3s linear infinite alternate-reverse;
-    background: #fafafa;
+    background: $color-bg;
     opacity: 0;
     transform: translateX(-2px);
   }
-  .mainHover {
+  .hover {
     display: none;
   }
 
@@ -60,7 +60,7 @@
     .main {
       display: none;
     }
-    .mainHover {
+    .hover {
       display: inline-block;
     }
   }

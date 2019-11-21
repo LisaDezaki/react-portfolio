@@ -17,7 +17,7 @@ import css from "../project.module.scss";
 
 class ProjectGoT extends Component {
   componentDidMount = () => {
-    document.title = "Game of Thrones Logos // EllieAshton";
+    document.title = "Game of Thrones Logos // Lisa Dezaki";
   };
 
   render() {

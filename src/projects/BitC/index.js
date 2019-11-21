@@ -6,7 +6,7 @@ import css from "../project.module.scss";
 
 class ProjectBitC extends Component {
   componentDidMount = () => {
-    document.title = "Board in the City // EllieAshton";
+    document.title = "Board in the City // Lisa Dezaki";
   };
 
   render() {

@@ -15,7 +15,7 @@ import css from "../project.module.scss";
 
 class ProjectLogos extends Component {
   componentDidMount = () => {
-    document.title = "Logos // EllieAshton";
+    document.title = "Logos // Lisa Dezaki";
   };
 
   render() {
