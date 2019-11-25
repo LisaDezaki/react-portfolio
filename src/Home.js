@@ -8,7 +8,7 @@ import {
   img_bitc_png,
   img_dnd_png,
   img_fet_png,
-  // img_got_png,
+  img_got_png,
   img_lab_png,
   // img_logo_png,
 } from "./img/index.js";
@@ -24,22 +24,13 @@ const projects = [
     img: img_lab_png
   },
   {
-    id: "bitc",
-    name: "Board in the City",
-    type: "Website",
-    desc:
-      "Single page Wordpress theme with custom features. Board in the City CIC is a not-for-profit board games café in Southampton.",
-    link: "/bitc",
-    img: img_bitc_png
+    id: "got",
+    name: "Game of Thrones Logos",
+    type: "Branding",
+    desc: "Game of Thrones house sigils re-imagined as corporate logos.",
+    link: "/got",
+    img: img_got_png
   },
-  // {
-  //   id: "got",
-  //   name: "Game of Thrones Logos",
-  //   type: "Branding",
-  //   desc: "Game of Thrones house sigils re-imagined as corporate logos.",
-  //   link: "/got",
-  //   img: img_got_png
-  // },
   // {
   //   id: "logos",
   //   name: "Various Logos",
@@ -65,6 +56,15 @@ const projects = [
     desc: "A modern redesign of the FetLife app for iOS and Android.",
     link: "/fetlife",
     img: img_fet_png
+  },
+  {
+    id: "bitc",
+    name: "Board in the City",
+    type: "Website",
+    desc:
+      "Single page Wordpress theme with custom features. Board in the City CIC is a not-for-profit board games café in Southampton.",
+    link: "/bitc",
+    img: img_bitc_png
   }
 ];
 
