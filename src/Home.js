@@ -17,7 +17,7 @@ const projects = [
   {
     id: "lab",
     name: "CSS Lab",
-    type: "Interaction",
+    type: "Interface Design",
     desc:
       "Spinners, loaders, buttons, modals, tooltips, alerts; all my favourite interface components in one place!",
     link: "http://lab.lisadezaki.me",
@@ -26,7 +26,7 @@ const projects = [
   {
     id: "got",
     name: "Game of Thrones Logos",
-    type: "Branding",
+    type: "Identity Design",
     desc: "Game of Thrones house sigils re-imagined as corporate logos.",
     link: "/got",
     img: img_got_png
@@ -34,7 +34,7 @@ const projects = [
   // {
   //   id: "logos",
   //   name: "Various Logos",
-  //   type: "Branding",
+  //   type: "Identity Design",
   //   desc:
   //     "A collection of logos designed for various fictional and non-fictional clients.",
   //   link: "/logos",
@@ -43,7 +43,7 @@ const projects = [
   {
     id: "dnd",
     name: "Character Sheet App",
-    type: "Under Construction",
+    type: "App Design",
     desc:
       "An interactive character sheet design for Dungeons & Dragons or similar RPGs. Currently under construction.",
     link: "/dnd",
@@ -60,7 +60,7 @@ const projects = [
   {
     id: "bitc",
     name: "Board in the City",
-    type: "Website",
+    type: "Web Design",
     desc:
       "Single page Wordpress theme with custom features. Board in the City CIC is a not-for-profit board games café in Southampton.",
     link: "/bitc",

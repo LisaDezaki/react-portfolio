@@ -91,3 +91,28 @@
     }
   }
 }
+
+@include bp-max($bp-md) {
+  .project,
+  .project:nth-of-type(odd) {
+    // flex-direction: column-reverse;
+    text-align: center;
+    .project__content {
+      max-width: 640px;
+      margin: 2rem;
+      padding: 0!important;
+      position: static;
+      .project__goto {
+        position: static;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 900px) {
+//   .project {
+//     .project__content {
+//       position: relative;
+//     }
+//   }
+// }
