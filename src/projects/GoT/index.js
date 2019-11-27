@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.scss";
 import { Footer, Logo, ProjectHeader } from "../../components";
 import {
+  got_overview,
   got_stark,
   got_lannister,
   got_baratheon,
@@ -24,18 +25,19 @@ class ProjectGoT extends Component {
     return (
       <article>
         <Logo glitch="hover" className={css.returnLink} to="/" />
-        <ProjectHeader name="Game of Thrones Logos." label="Branding" />
+        <ProjectHeader name="Game of Thrones Logos." label="Identity Design" />
         <div className={css.body}>
-          <img src={got_stark} alt="Stark" />
-          <img src={got_lannister} alt="Lannister" />
-          <img src={got_baratheon} alt="Baratheon" />
-          <img src={got_targaryen} alt="Targaryen" />
-          <img src={got_tyrell} alt="Tyrell" />
-          <img src={got_greyjoy} alt="Greyjoy" />
-          <img src={got_martell} alt="Martell" />
-          <img src={got_tully} alt="Tully" />
-          <img src={got_baelish} alt="Baelish" />
+          <img src={got_overview} alt="Overview" />
           <img src={got_arryn} alt="Arryn" />
+          <img src={got_baelish} alt="Baelish" />
+          <img src={got_baratheon} alt="Baratheon" />
+          <img src={got_greyjoy} alt="Greyjoy" />
+          <img src={got_lannister} alt="Lannister" />
+          <img src={got_martell} alt="Martell" />
+          <img src={got_stark} alt="Stark" />
+          <img src={got_targaryen} alt="Targaryen" />
+          <img src={got_tully} alt="Tully" />
+          <img src={got_tyrell} alt="Tyrell" />
         </div>
         <Footer />
       </article>

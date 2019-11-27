@@ -21,16 +21,17 @@ import dnd_equipment from "./project/dnd/dnd_equipment.png";
 import dnd_skills from "./project/dnd/dnd_skills.png";
 
 //  got
-import got_stark from "./project/got/01Stark.png";
-import got_lannister from "./project/got/02Lannister.png";
-import got_baratheon from "./project/got/03Baratheon.png";
-import got_targaryen from "./project/got/04Targaryen.png";
-import got_tyrell from "./project/got/05Tyrell.png";
-import got_greyjoy from "./project/got/06Greyjoy.png";
-import got_martell from "./project/got/07Martell.png";
-import got_tully from "./project/got/08Tully.png";
-import got_baelish from "./project/got/09Baelish.png";
-import got_arryn from "./project/got/10Arryn.png";
+import got_overview from "./project/got/Overview.png";
+import got_arryn from "./project/got/Arryn.png";
+import got_baelish from "./project/got/Baelish.png";
+import got_baratheon from "./project/got/Baratheon.png";
+import got_greyjoy from "./project/got/Greyjoy.png";
+import got_lannister from "./project/got/Lannister.png";
+import got_martell from "./project/got/Martell.png";
+import got_stark from "./project/got/Stark.png";
+import got_targaryen from "./project/got/Targaryen.png";
+import got_tully from "./project/got/Tully.png";
+import got_tyrell from "./project/got/Tyrell.png";
 
 //  logos
 
@@ -58,16 +59,17 @@ export {
   dnd_inventory,
   dnd_equipment,
   dnd_skills,
-  got_stark,
-  got_lannister,
-  got_baratheon,
-  got_targaryen,
-  got_tyrell,
-  got_greyjoy,
-  got_martell,
-  got_tully,
-  got_baelish,
+  got_overview,
   got_arryn,
+  got_baelish,
+  got_baratheon,
+  got_greyjoy,
+  got_lannister,
+  got_martell,
+  got_stark,
+  got_targaryen,
+  got_tully,
+  got_tyrell,
   logo_brokenarrow,
   logo_enigma,
   logo_euravian,
