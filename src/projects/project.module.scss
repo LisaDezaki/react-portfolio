@@ -2,6 +2,7 @@
 
 article {
   @include flex(c, stretch, col);
+  padding-top: 64px;
 
   .returnLink {
     @include fixed(0, auto, auto, 0);

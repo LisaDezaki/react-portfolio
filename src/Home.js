@@ -76,7 +76,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Logo />
+        <Logo glitch />
         <section>
           <Heading size="lg" glitch>
             <strong>Lisa</strong>

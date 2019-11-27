@@ -48,7 +48,7 @@
     display: none;
   }
 
-  &:hover {
+  &.glitch:hover {
     .left {
       animation: glitchContinuous 2s infinite linear alternate;
       transform: translateX(4px);

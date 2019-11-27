@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.scss";
 import { Footer, Logo, ProjectHeader } from "../../components";
 import {
+  dnd_full,
   dnd_profile,
   dnd_inventory,
   dnd_equipment,
@@ -20,9 +21,10 @@ class ProjectDnD extends Component {
         <Logo glitch="hover" className={css.returnLink} to="/" />
         <ProjectHeader
           name="Dungeons &amp; Dragons Character Sheet App."
-          label="Coming Soon"
+          label="App Design"
         />
         <div className={css.body}>
+          <img src={dnd_full} alt="Full" />
           <img src={dnd_profile} alt="Profile" />
           <img src={dnd_inventory} alt="Inventory" />
           <img src={dnd_equipment} alt="Equipment" />

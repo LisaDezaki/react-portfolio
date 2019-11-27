@@ -1,12 +1,15 @@
 @import "src/css/utils";
 
 .projectHeader {
-  @include flex(c, m, col);
-  padding: 4rem 1rem 2rem;
-  @include bp-min($bp-sm) {
-    padding: 6rem 2rem 4rem;
-  }
-  @include bp-min($bp-lg) {
-    padding: 8rem 4rem 6rem;
+  @include fixed(0,0,auto,0);
+  @include flex(spread, m, row);
+  background-color: $color-bg;
+  height: 64px;
+  padding: 0.5rem 1rem;
+  z-index: 1;
+
+  .returnLink {
+    height: 32px;
+    width: 32px;
   }
 }
