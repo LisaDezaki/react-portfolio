@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.scss";
-import { Button, Footer, Logo, ProjectHeader } from "../../components";
+import { Button, Footer, ProjectHeader } from "../../components";
 import img_bitc_lg from "../../img/project/bitc/bitc_lg.png";
 import css from "../project.module.scss";
 
@@ -12,8 +12,12 @@ class ProjectBitC extends Component {
   render() {
     return (
       <article>
-        <Logo glitch="hover" className={css.returnLink} to="/" />
-        <ProjectHeader name="Board in the City." label="Website" />
+        <ProjectHeader
+          bg="#7F0099"
+          color="#FFEB3B"
+          name="Board in the City."
+          label="Web Design"
+        />
         <div className={css.body}>
           <p>
             This project was done on a voluntary basis, for a board game

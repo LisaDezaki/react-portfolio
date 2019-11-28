@@ -12,7 +12,7 @@ const Icon = ({ className, of, size, to }) => (
       </a>
     )}
     {[1, 2, 3].map(n => (
-      <i className={cx(css.icon, "fa", `fa-${of}`)} />
+      <i className={cx(css.icon, "fab", `fa-${of}`)} />
     ))}
   </div>
 );

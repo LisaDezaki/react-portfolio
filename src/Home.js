@@ -114,6 +114,13 @@ class Home extends Component {
             <Icon
               glitch
               size="lg"
+              of="github"
+              to="https://github.com/LisaDezaki"
+            />
+
+            <Icon
+              glitch
+              size="lg"
               of="behance"
               to="https://www.behance.net/LisaTheArtful"
             />
@@ -121,8 +128,8 @@ class Home extends Component {
             <Icon
               glitch
               size="lg"
-              of="github"
-              to="https://github.com/LisaDezaki"
+              of="twitter"
+              to="https://www.twitter.net/LisaDezaki"
             />
 
             <Icon
@@ -131,6 +138,15 @@ class Home extends Component {
               of="linkedin"
               to="https://www.linkedin.com/in/lisa-dezaki-8b9088196/"
             />
+
+            <Icon
+              glitch
+              size="lg"
+              of="telegram-plane"
+              to="https://t.me/LisaTheHandful"
+            />
+
+
           </div>
         </section>
         <Scrollspy

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.scss";
-import { Footer, Logo, ProjectHeader } from "../../components";
+import { Footer, ProjectHeader } from "../../components";
 import {
   got_overview,
   got_stark,
@@ -18,14 +18,16 @@ import css from "../project.module.scss";
 
 class ProjectGoT extends Component {
   componentDidMount = () => {
-    document.title = "Game of Thrones Logos // Lisa Dezaki";
+    document.title = "Game of Logos // Lisa Dezaki";
   };
 
   render() {
     return (
       <article>
-        <Logo glitch="hover" className={css.returnLink} to="/" />
-        <ProjectHeader name="Game of Thrones Logos." label="Identity Design" />
+        <ProjectHeader
+          name="Game of Logos."
+          label="Identity Design"
+        />
         <div className={css.body}>
           <img src={got_overview} alt="Overview" />
           <img src={got_arryn} alt="Arryn" />

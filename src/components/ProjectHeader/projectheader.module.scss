@@ -2,14 +2,21 @@
 
 .projectHeader {
   @include fixed(0,0,auto,0);
-  @include flex(spread, m, row);
+  @include flex(c, m, row);
+  @include shadow(1);
   background-color: $color-bg;
   height: 64px;
   padding: 0.5rem 1rem;
   z-index: 1;
 
   .returnLink {
+    @include absolute(16px, auto, 16px, 16px);
     height: 32px;
     width: 32px;
+  }
+
+  .projectHeading,
+  .projectLabel {
+    margin: 0 0.5rem;
   }
 }
