@@ -23,7 +23,7 @@ class ProjectDnD extends Component {
         <div className={css.body}>
           <img src={dnd_full} alt="Full" />
         </div>
-        <Footer />
+        <Footer bg="#202225" color="#ffd800" />
       </article>
     );
   }

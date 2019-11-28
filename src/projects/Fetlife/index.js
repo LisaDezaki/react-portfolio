@@ -21,7 +21,7 @@ class ProjectFet extends Component {
         <div className={css.body}>
           <img src={img_fet_lg} alt="fetlife-app-design" className={css.left} />
         </div>
-        <Footer />
+        <Footer bg="#1b1b1b" color="#b51e26" />
       </article>
     );
   }
