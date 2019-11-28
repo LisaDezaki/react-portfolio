@@ -11,10 +11,10 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route exact path="/" component={Home} />
-          <Route exact path="/bitc" component={ProjectBitC} />
-          <Route exact path="/dnd" component={ProjectDnD} />
+          <Route exact path="/board-in-the-city" component={ProjectBitC} />
+          <Route exact path="/character-sheet" component={ProjectDnD} />
           <Route exact path="/fetlife" component={ProjectFet} />
-          <Route exact path="/got" component={ProjectGoT} />
+          <Route exact path="/game-of-logos" component={ProjectGoT} />
           <Route exact path="/logos" component={ProjectLogos} />
         </div>
       </Router>

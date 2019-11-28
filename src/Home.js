@@ -28,7 +28,7 @@ const projects = [
     name: "Game of Thrones Logos",
     type: "Identity Design",
     desc: "Game of Thrones house sigils re-imagined as corporate logos.",
-    link: "/got",
+    link: "/game-of-logos",
     img: img_got_png
   },
   // {
@@ -46,7 +46,7 @@ const projects = [
     type: "App Design",
     desc:
       "An interactive character sheet design for Dungeons & Dragons or similar RPGs. Currently under construction.",
-    link: "/dnd",
+    link: "/character-sheet",
     img: img_dnd_png
   },
   {
@@ -63,7 +63,7 @@ const projects = [
     type: "Web Design",
     desc:
       "Single page Wordpress theme with custom features. Board in the City CIC is a not-for-profit board games café in Southampton.",
-    link: "/bitc",
+    link: "/board-in-the-city",
     img: img_bitc_png
   }
 ];
