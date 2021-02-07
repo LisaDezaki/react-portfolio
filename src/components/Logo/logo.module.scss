@@ -5,20 +5,20 @@
 }
 
 .container {
-  height: 56px;
-  width: 56px;
+  height: 32px;
+  width: 32px;
   position: relative;
   @include bp-min($bp-xs) {
-    height: 64px;
-    width: 64px;
+    height: 40px;
+    width: 40px;
   }
   @include bp-min($bp-sm) {
-    height: 72px;
-    width: 72px;
+    height: 56px;
+    width: 56px;
   }
   @include bp-min($bp-md) {
-    height: 80px;
-    width: 80px;
+    height: 64px;
+    width: 64px;
   }
 
   .link {
@@ -37,35 +37,23 @@
   }
 
   .left {
-    animation: glitch3 3s linear infinite alternate;
+    animation: glitch3 3.0s linear infinite alternate;
     background: $color-bg;
     transform: translateX(2px);
   }
 
   .right {
-    animation: glitch1 3s linear infinite alternate-reverse;
+    animation: glitch1 3.0s linear infinite alternate-reverse;
     background: $color-bg;
-    opacity: 0;
     transform: translateX(-2px);
-  }
-  .hover {
-    display: none;
   }
 
   &.glitch:hover {
     .left {
-      animation: glitchContinuous 2s infinite linear alternate;
-      transform: translateX(4px);
+      animation: glitchContinuous 2.0s infinite linear alternate;
     }
     .right {
       animation: glitchContinuous 2.5s infinite linear alternate-reverse;
-      transform: translateX(-4px);
-    }
-    .main {
-      display: none;
-    }
-    .hover {
-      display: inline-block;
     }
   }
 }

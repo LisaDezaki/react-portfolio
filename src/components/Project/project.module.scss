@@ -55,9 +55,11 @@
 
       .project__goto {
         @include flex(c, m, row, inline);
-        color: rgba(0, 0, 0, 0.5);
+        background-color: $color-text;
+        border-radius: 20px;
         cursor: pointer;
         margin-top: 3rem;
+        padding: 0.25rem 1rem;
         position: relative;
         text-align: center;
         transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
@@ -65,15 +67,13 @@
 
         .project__goto__text {
           @include font(button);
-          color: $color-text;
-          font-size: 1.5rem;
+          color: $color-bg;
           &:nth-child(1) {
             animation: glitchText 4s infinite linear;
           }
           &:nth-child(n + 2) {
             @include absolute(0, 0, 0, 0);
             @include flex(c, m, row);
-            background-color: $color-bg;
             display: none;
           }
           &:nth-child(2) {

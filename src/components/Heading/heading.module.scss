@@ -3,7 +3,6 @@
 .heading {
   line-height: 0.75;
   margin: 0;
-  // max-width: 480px;
   position: relative;
   text-align: center;
   @include bp-min($bp-sm) {
@@ -47,7 +46,7 @@
     padding: 0 0.5rem;
 
     strong {
-      font-weight: 400;
+      font-weight: 600;
     }
 
     span {

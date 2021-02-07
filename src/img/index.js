@@ -1,15 +1,9 @@
-//  logo
-import logo_l from "./logo/logo_glitch_l.png";
-import logo_m from "./logo/logo_glitch_m.png";
-import logo_r from "./logo/logo_glitch_r.png";
-
 //  projects
 import img_bitc_png from "./project/bitc.png";
 import img_dnd_png from "./project/dnd.png";
 import img_fet_png from "./project/fet.png";
 import img_got_png from "./project/got.png";
 import img_lab_png from "./project/lab.png";
-// import img_logo_png from "./project/logo.png";
 
 //  bitc
 import bitc_lg from "./project/bitc/bitc_lg.png";
@@ -46,15 +40,11 @@ import logo_splash from "./project/logo/07Splash.png";
 import logo_venus from "./project/logo/08Venus.png";
 
 export {
-  logo_l,
-  logo_m,
-  logo_r,
   img_bitc_png,
   img_dnd_png,
   img_fet_png,
   img_got_png,
   img_lab_png,
-  // img_logo_png,
   bitc_lg,
   dnd_full,
   dnd_profile,

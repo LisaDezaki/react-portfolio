@@ -66,37 +66,6 @@ class Project extends Component {
             </div>
           </div>
         </div>
-
-        
-
-        {/* <div className={css.project__img__container}>
-          <div className={css.project__goto}>
-            {[1, 2, 3].map(n => (
-              <Title glitch className={css.project__goto__text} key={n}>
-                View project
-              </Title>
-            ))}
-          </div>
-          <GlitchImg
-            className={css.project__img}
-            glitch={hover}
-            src={img}
-            alt={name}
-          />
-        </div>
-        <div className={css.project__info}>
-          <Title className={css.project__name}>{name}</Title>
-          <Label className={css.project__type}>{type}</Label>
-          <p className={css.project__desc}>{desc}</p>
-          <div className={css.project__goto}>
-            {[1, 2, 3].map(n => (
-              <Title glitch className={css.project__goto__text} key={n}>
-                View project
-              </Title>
-            ))}
-          </div>
-        </div> */}
-        {/* </ProjectLink> */}
       </div>
     );
   }

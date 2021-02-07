@@ -3,7 +3,6 @@
 $btnHeight: 48px;
 
 .buttonGlitch {
-  // outline: 1px solid red;
   @include font(button);
   background-color: transparent;
   border: none;

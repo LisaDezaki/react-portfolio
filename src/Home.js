@@ -76,11 +76,12 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Logo glitch />
+        <Logo glitch to="/" />
         <section>
+
           <Heading size="lg" glitch>
-            <strong>Lisa</strong>
-            <span>Dezaki</span>
+            <span>Lisa</span>
+            <strong>Dezaki</strong>
           </Heading>
           <Subheading>web • ui • ux</Subheading>
         </section>
