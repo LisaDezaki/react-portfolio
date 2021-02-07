@@ -123,7 +123,7 @@ class Home extends Component {
               glitch
               size="lg"
               of="behance"
-              to="https://www.behance.net/LisaTheArtful"
+              to="https://www.behance.net/LisaDezaki"
             />
 
             <Icon
@@ -144,9 +144,8 @@ class Home extends Component {
               glitch
               size="lg"
               of="telegram-plane"
-              to="https://t.me/LisaTheHandful"
+              to="https://t.me/LisaDezaki"
             />
-
 
           </div>
         </section>
