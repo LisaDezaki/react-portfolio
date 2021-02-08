@@ -37,11 +37,22 @@
     .logo {
       mix-blend-mode: multiply;
     }
+    .logo:nth-child(1) {
+      opacity: 0;
+    }
     .logo:nth-child(2) {
-      animation: iconGlitch1 1s infinite;
+      animation: iconGlitch1 1.5s infinite;
     }
     .logo:nth-child(3) {
-      animation: iconGlitch2 1s infinite;
+      animation: iconGlitch2 1.5s infinite;
+    }
+    .logo:nth-child(4) {
+      animation: iconClip1 1.5s infinite;
+      background-color: $color-bg;
+    }
+    .logo:nth-child(5) {
+      animation: iconClip2 1.5s infinite;
+      background-color: $color-bg;
     }
   }
 }

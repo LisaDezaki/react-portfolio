@@ -11,7 +11,7 @@ const Icon = ({ className, of, size, to }) => (
         {css.link}
       </a>
     )}
-    {[1, 2].map(n => (
+    {[1, 2, 3, 4].map(n => (
       <i className={cx(css.icon, "fab", `fa-${of}`)} />
     ))}
   </div>

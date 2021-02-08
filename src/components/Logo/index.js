@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cx from "classnames";
-// import img_l from "./img/logo_l.png";
-import img_m from "./img/logo.png";
-// import img_r from "./img/logo_r.png";
+import img from "./img/logo.png";
 import css from "./logo.module.scss";
 
 const Logo = ({ className, color, glitch, to }) => {
@@ -11,8 +9,8 @@ const Logo = ({ className, color, glitch, to }) => {
     return (
       <div className={cx(css.container, css.glitch, className)}>
         {to && <Link className={css.link} to={to} />}
-        {[1,2].map(n => (
-          <img className={cx(css.logo)} alt="logo" src={img_m} />
+        {[1,2,3,4].map(n => (
+          <img className={cx(css.logo)} alt="logo" src={img} />
         ))}
       </div>
     )

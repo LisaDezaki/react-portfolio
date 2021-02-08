@@ -49,11 +49,11 @@ class Project extends Component {
               onMouseEnter={this.linkHover}
               onMouseLeave={this.linkUnhover}
             >
-              {/* {[1, 2, 3].map(n => ( */}
+              {[1, 2, 3, 4, 5].map(n => (
                 <Title className={css.project__goto__text}>
                   View project
                 </Title>
-              {/* ))} */}
+              ))}
               {externalLink ? (
                 <a className={css.projectLink} href={link}>
                   Go to project

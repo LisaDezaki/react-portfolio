@@ -290,59 +290,171 @@ $glitchContinuous: (
 
 //  ICON GLITCH EFFECT
 
-$percents: 0%, 9.9%, 10%, 19.9%, 20%,
-          29.9%, 30%, 39.9%, 40%, 49.9%,
-          50%, 59.9%, 60%, 69.9%, 70%,
-          79.9%, 80%, 89.9%, 90%, 99.9%;
+$percents:
+0%, 4.9%,
+5%, 9.9%,
+10%, 14.9%,
+15%, 19.9%,
+20%, 24.9%,
+25%, 29.9%,
+30%, 34.9%,
+35%, 39.9%,
+40%, 44.9%,
+45%, 49.9%,
+50%, 54.9%,
+55%, 59.9%,
+60%, 64.9%,
+65%, 69.9%,
+70%, 74.9%,
+75%, 79.9%,
+80%, 84.9%,
+85%, 89.9%,
+90%, 94.9%,
+95%, 99.9%;
 
-$offsets: translate(2px, -1px), translate(-0.5px, 1px),
-          translate(1px, 1px),  translate(-1px, -1px),
-          translate(-1px, 1px), translate(0.5px, -1px),
-          translate(-1px, 1px),  translate(1px, -1px),
-          translate(1px, -2px), translate(-0.5px, 0),
-          translate(2px, 1px),  translate(-1px, -1px),
-          translate(2px, -0.5px), translate(-1px, 1px),
-          translate(1px, 1px),  translate(-0.5px, -1px),
-          translate(0, -1px), translate(-2px, 1px),
-          translate(1px, 1px),  translate(-1px, 0);
+$offsets:
+translate(2px, -1px), translate(-0.5px, 1px),
+translate(0, -1px), translate(-2px, 1px),
+translate(-1px, 1px), translate(0.5px, -1px),
+translate(2px, -0.5px), translate(-1px, 1px),
+translate(1px, -2px), translate(-0.5px, 0),
+translate(2px, 1px),  translate(-1px, -1px),
+translate(2px, -0.5px), translate(-1px, 1px),
+translate(0, -1px), translate(-2px, 1px),
+translate(1px, 1px),  translate(-1px, -1px),
+translate(1px, 1px),  translate(-1px, 0),
+translate(-1px, 1px),  translate(1px, -1px),
+translate(-1px, 1px), translate(0.5px, -1px),
+translate(1px, 1px),  translate(-0.5px, -1px),
+translate(2px, -1px), translate(-0.5px, 1px),
+translate(1px, -2px), translate(-0.5px, 0),
+translate(2px, 1px),  translate(-1px, -1px),
+translate(1px, 1px),  translate(-1px, -1px),
+translate(1px, 1px),  translate(-0.5px, -1px),
+translate(-1px, 1px),  translate(1px, -1px),
+translate(1px, 1px),  translate(-1px, 0);
 
-$filters: hue-rotate(130deg), hue-rotate(310deg),
-          hue-rotate(20deg),  hue-rotate(200deg),
-          hue-rotate(90deg),  hue-rotate(270deg),
-          hue-rotate(0deg),   hue-rotate(180deg),
-          hue-rotate(20deg),  hue-rotate(200deg),
-          hue-rotate(90deg),  hue-rotate(270deg),
-          hue-rotate(140deg), hue-rotate(320deg),
-          hue-rotate(20deg),  hue-rotate(200deg),
-          hue-rotate(90deg),  hue-rotate(270deg),
-          hue-rotate(30deg), hue-rotate(210deg);
+$offsets2:
+translate(1px, -1px) skew(35%), translate(-1px, 1px),
+translate(-3px, 1px), translate(5px, -1px) skew(-75%),
+translate(4px, 1px), translate(-3px, 0) skew(-50%),
+translate(3px, -2px) skew(35%), translate(-5px, 0),
+translate(8px, -0.5px), translate(-4px, 1px),
+translate(6px, -1px), translate(-13px, 1px) skew(35%),
+translate(3px, 1px) skew(-45%),  translate(-3px, -1px),
+translate(3px, 1px),  translate(-4px, -1px),
+translate(1px, -1px) skew(35%), translate(-1px, 1px),
+translate(3px, 1px) skew(35%),  translate(-3px, -1px),
+translate(-3px, 1px), translate(5px, -1px) skew(-45%),
+translate(3px, 1px) skew(-45%),  translate(-4px, -1px) skew(-45%),
+translate(20px, -1px) skew(-45%), translate(-2px, 1px) skew(35%),
+translate(-4px, 1px),  translate(3px, -1px),
+translate(4px, 1px),  translate(-4px, -1px) skew(35%),
+translate(-4px, 1px) skew(35%),  translate(3px, -1px),
+translate(3px, -2px) skew(35%), translate(-5px, 0),
+translate(4px, 1px) skew(35%),  translate(-4px, -1px),
+translate(4px, -0.5px), translate(-4px, 1px) skew(35%),
+translate(4px, 1px),  translate(-3px, 0);
+
+$filters:
+hue-rotate(130deg), hue-rotate(310deg),
+hue-rotate(90deg),  hue-rotate(270deg),
+hue-rotate(20deg),  hue-rotate(200deg),
+hue-rotate(90deg),  hue-rotate(270deg),
+hue-rotate(0deg),   hue-rotate(180deg),
+hue-rotate(90deg),  hue-rotate(270deg),
+hue-rotate(20deg),  hue-rotate(200deg),
+hue-rotate(90deg),  hue-rotate(270deg),
+hue-rotate(20deg),  hue-rotate(200deg),
+hue-rotate(140deg), hue-rotate(320deg),
+hue-rotate(20deg),  hue-rotate(200deg),
+hue-rotate(140deg), hue-rotate(320deg),
+hue-rotate(90deg),  hue-rotate(270deg),
+hue-rotate(30deg), hue-rotate(210deg),
+hue-rotate(130deg), hue-rotate(310deg),
+hue-rotate(20deg),  hue-rotate(200deg),
+hue-rotate(20deg),  hue-rotate(200deg),
+hue-rotate(90deg),  hue-rotate(270deg),
+hue-rotate(0deg),   hue-rotate(180deg),
+hue-rotate(30deg), hue-rotate(210deg);
+
+$clippath: (
+  (5%, 70%),
+  (50%, 80%),
+  (55%, 85%),
+  (20%, 45%),
+  (65%, 95%),
+  (35%, 45%),
+  (35%, 60%),
+  (20%, 45%),
+  (50%, 70%),
+  (50%, 80%),
+  (20%, 75%),
+  (65%, 80%),
+  (35%, 60%),
+  (50%, 70%),
+  (55%, 85%),
+  (5%, 70%),
+  (65%, 95%),
+  (20%, 75%),
+  (35%, 45%),
+  (65%, 80%)
+);
 
 @keyframes iconGlitch1 {
-  @for $n from 1 through 9 {
+  @for $n from 1 through 20 {
     $start: nth($percents, $n*2 - 1);
     $end:   nth($percents, $n*2);
-    #{$start} {
-      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2 - 1)};
-      transform: nth($offsets, $n*2 - 1);
-    }
+    #{$start},
     #{$end} {
-      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2 - 1)};
+      filter: sepia(100%) brightness(200%) contrast(500%) saturate(200%) #{nth($filters, $n*2 - 1)};
       transform: nth($offsets, $n*2 - 1);
     }
   }
 }
 
-@keyframes iconGlitch2 {
-  @for $n from 1 through 9 {
+@keyframes iconClip1 {
+  @for $n from 1 through 20 {
     $start: nth($percents, $n*2 - 1);
     $end:   nth($percents, $n*2);
-    #{$start} {
-      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2)};
-      transform: nth($offsets, $n*2);
+    $row: nth($clippath, $n);
+    $a1: nth($row, 1);
+    $a2: nth($row, 2);
+    #{$start},
+    #{$end} {
+      filter: sepia(100%) brightness(200%) contrast(500%) saturate(200%) #{nth($filters, $n*2 - 1)};
+      transform: nth($offsets2, $n*2 - 1);
+      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0 $a2);
+      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0 $a2);
     }
+  }
+}
+
+@keyframes iconGlitch2 {
+  @for $n from 1 through 20 {
+    $start: nth($percents, $n*2 - 1);
+    $end:   nth($percents, $n*2);
+    #{$start},
     #{$end} {
       filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2)};
       transform: nth($offsets, $n*2);
+    }
+  }
+}
+
+@keyframes iconClip2 {
+  @for $n from 1 through 20 {
+    $start: nth($percents, $n*2 - 1);
+    $end:   nth($percents, $n*2);
+    $row: nth($clippath, $n);
+    $a1: nth($row, 1);
+    $a2: nth($row, 2);
+    #{$start},
+    #{$end} {
+      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2)};
+      transform: nth($offsets2, $n*2);
+      -webkit-clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0 $a2);
+      clip-path: polygon(0 $a1, 100% $a1, 100% $a2, 0 $a2);
     }
   }
 }

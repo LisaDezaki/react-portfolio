@@ -20,11 +20,11 @@ const GlitchImg = ({
       className
     )}
   >
-    {[1, 2, 3, 4, 5].map(key => (
-      <div className={css.glitch__img} key={key} style={{ animationDelay }}>
+    {/* {[1, 2, 3, 4, 5].map(key => ( */}
+      <div className={css.glitch__img} style={{ animationDelay }}>
         <img src={src} alt={alt} height={height} width={width} />
       </div>
-    ))}
+    {/* ))} */}
   </div>
 );
 

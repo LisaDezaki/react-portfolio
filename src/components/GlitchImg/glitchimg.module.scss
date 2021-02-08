@@ -37,6 +37,7 @@ $filters: sepia(100%) contrast(50%)  saturate(5000%) hue-rotate(140deg),
       .glitch__img:nth-child(#{$n + 1}) {
         animation: glitch + $n $duration infinite linear #{$n * 200}ms;
         filter: nth($filters, $n);
+        mix-blend-mode: lighten;
         opacity: 1;
         transform: nth($blend-offsets, $n);
         transition: opacity 1ms linear #{$n * 200}ms;
