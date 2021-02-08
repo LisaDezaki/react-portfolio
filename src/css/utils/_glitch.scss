@@ -286,3 +286,63 @@ $glitchContinuous: (
     }
   }
 }
+
+
+//  ICON GLITCH EFFECT
+
+$percents: 0%, 9.9%, 10%, 19.9%, 20%,
+          29.9%, 30%, 39.9%, 40%, 49.9%,
+          50%, 59.9%, 60%, 69.9%, 70%,
+          79.9%, 80%, 89.9%, 90%, 99.9%;
+
+$offsets: translate(2px, -1px), translate(-0.5px, 1px),
+          translate(1px, 1px),  translate(-1px, -1px),
+          translate(-1px, 1px), translate(0.5px, -1px),
+          translate(-1px, 1px),  translate(1px, -1px),
+          translate(1px, -2px), translate(-0.5px, 0),
+          translate(2px, 1px),  translate(-1px, -1px),
+          translate(2px, -0.5px), translate(-1px, 1px),
+          translate(1px, 1px),  translate(-0.5px, -1px),
+          translate(0, -1px), translate(-2px, 1px),
+          translate(1px, 1px),  translate(-1px, 0);
+
+$filters: hue-rotate(130deg), hue-rotate(310deg),
+          hue-rotate(20deg),  hue-rotate(200deg),
+          hue-rotate(90deg),  hue-rotate(270deg),
+          hue-rotate(0deg),   hue-rotate(180deg),
+          hue-rotate(20deg),  hue-rotate(200deg),
+          hue-rotate(90deg),  hue-rotate(270deg),
+          hue-rotate(140deg), hue-rotate(320deg),
+          hue-rotate(20deg),  hue-rotate(200deg),
+          hue-rotate(90deg),  hue-rotate(270deg),
+          hue-rotate(30deg), hue-rotate(210deg);
+
+@keyframes iconGlitch1 {
+  @for $n from 1 through 9 {
+    $start: nth($percents, $n*2 - 1);
+    $end:   nth($percents, $n*2);
+    #{$start} {
+      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2 - 1)};
+      transform: nth($offsets, $n*2 - 1);
+    }
+    #{$end} {
+      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2 - 1)};
+      transform: nth($offsets, $n*2 - 1);
+    }
+  }
+}
+
+@keyframes iconGlitch2 {
+  @for $n from 1 through 9 {
+    $start: nth($percents, $n*2 - 1);
+    $end:   nth($percents, $n*2);
+    #{$start} {
+      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2)};
+      transform: nth($offsets, $n*2);
+    }
+    #{$end} {
+      filter: sepia(100%) brightness(200%) contrast(100%) saturate(500%) #{nth($filters, $n*2)};
+      transform: nth($offsets, $n*2);
+    }
+  }
+}

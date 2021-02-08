@@ -6,13 +6,13 @@
   text-decoration: none;
 
   &.icon--size-sm .icon {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   &.icon--size-md .icon {
-    font-size: 2.4rem;
+    font-size: 2.0rem;
   }
   &.icon--size-lg .icon {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
   }
 
   @for $n from 1 through 3 {
@@ -34,26 +34,20 @@
     &:nth-of-type(n + 2) {
       @include absolute(0, 0, 0, 0);
       @include flex(c, m, row);
-      background: $color-bg;
-    }
-
-    &:nth-of-type(2) {
-      animation: glitch1 1s infinite linear;
-      text-shadow: 2px 0 cyan;
-      transform: translateX(-3px);
-    }
-
-    &:nth-of-type(3) {
-      animation: glitch2 1.5s infinite linear reverse;
-      text-shadow: -2px 0 magenta;
-      transform: translateX(3px);
     }
   }
 
   &:hover {
-    .icon:nth-of-type(n + 2) {
-      animation-name: glitchContinuous;
-      animation-duration: 1.5s;
+    .icon:nth-child(1) {
+      opacity: 0;
+    }
+    .icon:nth-child(2) {
+      animation: iconGlitch1 1s infinite;
+      mix-blend-mode: multiply;
+    }
+    .icon:nth-child(3) {
+      animation: iconGlitch2 1s infinite;
+      mix-blend-mode: multiply;
     }
   }
 }

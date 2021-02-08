@@ -28,32 +28,20 @@
   }
 
   .logo {
+    @include absolute(0,0,0,0);
     height: 100%;
     width: 100%;
   }
 
-  .logo:not(.main) {
-    @include absolute(0, 0, 0, 0);
-  }
-
-  .left {
-    animation: glitch3 3.0s linear infinite alternate;
-    background: $color-bg;
-    transform: translateX(2px);
-  }
-
-  .right {
-    animation: glitch1 3.0s linear infinite alternate-reverse;
-    background: $color-bg;
-    transform: translateX(-2px);
-  }
-
-  &.glitch:hover {
-    .left {
-      animation: glitchContinuous 2.0s infinite linear alternate;
+  &:hover {
+    .logo {
+      mix-blend-mode: multiply;
     }
-    .right {
-      animation: glitchContinuous 2.5s infinite linear alternate-reverse;
+    .logo:nth-child(2) {
+      animation: iconGlitch1 1s infinite;
+    }
+    .logo:nth-child(3) {
+      animation: iconGlitch2 1s infinite;
     }
   }
 }
