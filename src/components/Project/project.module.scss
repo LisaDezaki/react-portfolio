@@ -38,7 +38,12 @@
         transition-delay: 0.1s;
       }
       .project__desc {
+        line-height: 1.4;
         transition-delay: 0.2s;
+      }
+
+      .project__link {
+        margin-top: 1.5rem;
       }
     }
   }

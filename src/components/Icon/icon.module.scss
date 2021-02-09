@@ -1,18 +1,33 @@
 @import "src/css/utils";
 
 .iconWrap {
-  margin: 0 0.5rem;
+  @include flex(c,m,row);
+  overflow: hidden;
   position: relative;
   text-decoration: none;
 
-  &.icon--size-sm .icon {
-    font-size: 1.4rem;
+  &.icon--size-sm {
+      height: 30px;
+      width: 30px;
+      .icon {
+        font-size: 1.6rem;
+      }
   }
-  &.icon--size-md .icon {
-    font-size: 2.0rem;
+
+  &.icon--size-md {
+    height: 52px;
+    width: 52px;
+    .icon {
+      font-size: 2.8rem;
+    }
   }
-  &.icon--size-lg .icon {
-    font-size: 2.4rem;
+
+  &.icon--size-lg {
+    height: 72px;
+    width: 72px;
+    .icon {
+      font-size: 4rem;
+    }
   }
 
   @for $n from 1 through 3 {
@@ -29,7 +44,6 @@
 
   .icon {
     @include flex(c, m, row);
-    padding: 0 0.5rem;
 
     &:nth-of-type(n + 2) {
       @include absolute(0, 0, 0, 0);

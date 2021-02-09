@@ -15,7 +15,7 @@ const Project = ({ desc, id, img, link, name, type }) => (
         <Title className={css.project__name}>{name}</Title>
         <Label className={css.project__type}>{type}</Label>
         <p className={css.project__desc}>{desc}</p>
-        <Button glitchHover link={link}>
+        <Button className={css.project__link} glitchHover link={link} size="md">
           <span>View Project</span>
         </Button>
       </div>

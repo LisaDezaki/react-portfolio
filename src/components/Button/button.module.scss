@@ -1,39 +1,49 @@
 @import "src/css/utils";
 
-$btnHeight: 40px;
+$btnSm: 32px;
+$btnMd: 44px;
+$btnLg: 56px;
+// $btnHeight: 40px;
 
 .button {
   @include font(label);
   background-color: $color-text;
-  border-radius: $btnHeight * 0.5;
+  // border-radius: $btnHeight * 0.5;
   border: none;
   color: white;
   cursor: pointer;
-  height: $btnHeight;
+  // height: $btnHeight;
   overflow: hidden;
-  padding: 1rem 2rem;
+  // padding: 1rem 2rem;
   position: relative;
 
-  &> *:not(a):not(button) {
-    pointer-events: none;
-  }
+  // &> *:not(a):not(button) {
+  //   pointer-events: none;
+  // }
 
   &.size--sm {
-    height: 32px;
+    border-radius: $btnSm / 2;
+    font-size: 0.6rem;
+    height: $btnSm;
     padding: 0.25rem 1rem;
   }
   &.size--md {
-    height: 40px;
+    border-radius: $btnMd / 2;
+    height: $btnMd;
     padding: 0.5rem 1.5rem;
   }
   &.size--lg {
-    height: 56px;
+    border-radius: $btnLg / 2;
+    font-size: 1rem;
+    height: $btnLg;
     padding: 1rem 2rem;
   }
 
   .buttonLink {
     @include absolute(0,0,0,0);
     @include flex(c,m,row);
+    // background-color: red;
     color: transparent;
+    z-index: 99;
   }
 }

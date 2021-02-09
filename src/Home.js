@@ -68,6 +68,34 @@ const projects = [
   }
 ];
 
+const socialMedia = [
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/LisaDezaki"
+  },
+  {
+    name: "Behance",
+    icon: "behance",
+    link: "https://www.behance.net/LisaDezaki"
+  },
+  {
+    name: "Twitter",
+    icon: "twitter",
+    link: "https://www.twitter.net/LisaDezaki"
+  },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/lisa-dezaki-8b9088196/"
+  },
+  {
+    name: "Telegram",
+    icon: "telegram-plane",
+    link: "https://t.me/LisaDezaki"
+  }
+];
+
 class Home extends Component {
   componentDidMount = () => {
     document.title = "LisaDezaki";
@@ -90,7 +118,7 @@ class Home extends Component {
         </section>
 
         <section>
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <Project
               key={project.id}
               id={project.id}
@@ -112,55 +140,21 @@ class Home extends Component {
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
-              padding: "1rem",
-              width: "100%"
+              justifyContent: "space-around",
+              padding: "3rem 1rem 0",
+              width: "480px"
             }}
           >
-            <GlitchEffect onHover>
-              <Icon
-                size="lg"
-                of="github"
-                to="https://github.com/LisaDezaki"
-              />
-            </GlitchEffect>
-
-            <GlitchEffect onHover>
-              <Icon
-                glitch
-                size="lg"
-                of="behance"
-                to="https://www.behance.net/LisaDezaki"
-              />
-            </GlitchEffect>
-
-            <GlitchEffect onHover>
-              <Icon
-                glitch
-                size="lg"
-                of="twitter"
-                to="https://www.twitter.net/LisaDezaki"
-              />
-            </GlitchEffect>
-
-            <GlitchEffect onHover>
-              <Icon
-                glitch
-                size="lg"
-                of="linkedin"
-                to="https://www.linkedin.com/in/lisa-dezaki-8b9088196/"
-              />
-            </GlitchEffect>
-
-            <GlitchEffect onHover>
-              <Icon
-                glitch
-                size="lg"
-                of="telegram-plane"
-                to="https://t.me/LisaDezaki"
-              />
-            </GlitchEffect>
-
+            {socialMedia.map((social) => (
+              <GlitchEffect onHover>
+                <Icon
+                  name={social.name}
+                  of={social.icon}
+                  size="md"
+                  to={social.link}
+                />
+              </GlitchEffect>
+            ))}
           </div>
         </section>
 
