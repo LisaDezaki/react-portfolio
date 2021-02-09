@@ -1,7 +1,6 @@
 import Button from "./Button";
 import Footer from "./Footer";
-import Glitch from "./Glitch";
-import GlitchImg from "./GlitchImg";
+import GlitchEffect from "./GlitchEffect";
 import Heading from "./Heading";
 import Icon from "./Icon";
 import Label from "./Label";
@@ -14,8 +13,7 @@ import Title from "./Title";
 export {
   Button,
   Footer,
-  Glitch,
-  GlitchImg,
+  GlitchEffect,
   Heading,
   Icon,
   Label,

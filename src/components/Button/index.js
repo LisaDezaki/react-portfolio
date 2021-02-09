@@ -1,21 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import cx from "classnames";
 import css from "./button.module.scss";
 
-const Button = ({ border, children, className, size }) => (
+const Button = ({ border, children, className, href, size, to }) => (
   <button
     className={cx(
-      css.buttonGlitch,
+      css.button,
       css[`border--${border || "transparent"}`],
       css[`size--${size || "md"}`],
       className
     )}
   >
-    {[1, 2, 3].map(n => (
-      <div key={n} className={css.buttonContentOuter}>
-        <div className={css.buttonContentInner}>{children}</div>
-      </div>
-    ))}
+    {href && (
+      <a className={css.buttonLink} href={href}>{children}</a>
+    )}
+    {to && (
+      <Link className={css.buttonLink} to={to}>{children}</Link>
+    )}
+    {children}
   </button>
 );
 
