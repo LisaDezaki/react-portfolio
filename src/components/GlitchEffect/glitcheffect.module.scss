@@ -17,6 +17,17 @@
     cursor: pointer;
   }
 
+  &.darkMode.glitchEffectOnHover:hover > *,
+  &.darkMode:not(.glitchEffectOnHover) > * {
+    &:nth-child(n+2) {
+      color: green;
+      mix-blend-mode: hard-light;
+    }
+    &:nth-child(n+4) {
+      mix-blend-mode: overlay;
+    }
+  }
+
   &.glitchEffectOnHover:hover > *,
   &:not(.glitchEffectOnHover) > *, {
     &:nth-child(n+2) {

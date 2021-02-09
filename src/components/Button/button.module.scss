@@ -3,28 +3,26 @@
 $btnHeight: 40px;
 
 .button {
-  @include font(button);
+  @include font(label);
   background-color: $color-text;
   border-radius: $btnHeight * 0.5;
   border: none;
   color: white;
   cursor: pointer;
   height: $btnHeight;
+  overflow: hidden;
   padding: 1rem 2rem;
   position: relative;
 
   &.size--sm {
-    font-size: 70%;
     height: 32px;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem;
   }
   &.size--md {
-    font-size: 85%;
     height: 40px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
   }
   &.size--lg {
-    font-size: 100%;
     height: 56px;
     padding: 1rem 2rem;
   }
