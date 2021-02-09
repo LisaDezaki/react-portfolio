@@ -2,17 +2,15 @@ import React from "react";
 import cx from "classnames";
 import css from "./heading.module.scss";
 
-const Heading = ({ children, glitch, size }) => (
+const Heading = ({ children, className, size }) => (
   <h1
     className={cx(
       css.heading,
-      glitch ? css.glitch : null,
-      css[`size--${size || "md"}`]
+      css[`size--${size || "md"}`],
+      className
     )}
   >
     <span className={css.heading__content}>{children}</span>
-    {glitch && <span className={css.heading__content}>{children}</span>}
-    {glitch && <span className={css.heading__content}>{children}</span>}
   </h1>
 );
 

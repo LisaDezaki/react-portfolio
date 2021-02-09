@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { GlitchImg, Label, Title } from "..";
+import { Button, GlitchEffect, Label, Title } from "..";
 import cx from 'classnames';
 import css from "./project.module.scss";
 
@@ -32,38 +31,16 @@ class Project extends Component {
         id={id}
         className={cx(css.project, hover ? css.hover : null)}
       >
-        <GlitchImg
-          className={css.project__img}
-          glitch={hover}
-          src={img}
-          alt={name}
-        />
+        <img className={css.project__img} src={img} alt={name} />
 
         <div className={css.project__content}>
           <div className={css.project__info}>
             <Title className={css.project__name}>{name}</Title>
             <Label className={css.project__type}>{type}</Label>
             <p className={css.project__desc}>{desc}</p>
-            <div
-              className={css.project__goto}
-              onMouseEnter={this.linkHover}
-              onMouseLeave={this.linkUnhover}
-            >
-              {[1, 2, 3, 4, 5].map(n => (
-                <Title className={css.project__goto__text}>
-                  View project
-                </Title>
-              ))}
-              {externalLink ? (
-                <a className={css.projectLink} href={link}>
-                  Go to project
-                </a>
-              ) : (
-                <Link className={css.projectLink} to={link}>
-                  Go to project
-                </Link>
-              )}
-            </div>
+            <GlitchEffect onHover>
+              <Button href={externalLink && link} to={!externalLink && link}>View Project</Button>
+            </GlitchEffect>
           </div>
         </div>
       </div>

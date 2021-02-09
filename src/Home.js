@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Scrollspy from "react-scrollspy";
 import "./css/App.scss";
-import { Heading, Footer, Icon, Logo, Project, Subheading } from "./components";
+import { GlitchEffect, Heading, Footer, Icon, Logo, Project, Subheading } from "./components";
 import scrollspy from "./css/scrollspy.module.scss";
 
 import {
@@ -76,15 +76,19 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Logo glitch to="/" />
-        <section>
 
-          <Heading size="lg" glitch>
+        <GlitchEffect onHover>
+          <Logo to="/" />
+        </GlitchEffect>
+
+        <section>
+          <Heading size="lg">
             <span>Lisa</span>
             <strong>Dezaki</strong>
           </Heading>
           <Subheading>web • ui • ux</Subheading>
         </section>
+
         <section>
           {projects.map((project, index) => (
             <Project
@@ -99,6 +103,7 @@ class Home extends Component {
             />
           ))}
         </section>
+
         <section>
           <Heading size="md" glitch={true}>
             Get in touch
@@ -112,43 +117,53 @@ class Home extends Component {
               width: "100%"
             }}
           >
-            <Icon
-              glitch
-              size="lg"
-              of="github"
-              to="https://github.com/LisaDezaki"
-            />
+            <GlitchEffect onHover>
+              <Icon
+                size="lg"
+                of="github"
+                to="https://github.com/LisaDezaki"
+              />
+            </GlitchEffect>
 
-            <Icon
-              glitch
-              size="lg"
-              of="behance"
-              to="https://www.behance.net/LisaDezaki"
-            />
+            <GlitchEffect onHover>
+              <Icon
+                glitch
+                size="lg"
+                of="behance"
+                to="https://www.behance.net/LisaDezaki"
+              />
+            </GlitchEffect>
 
-            <Icon
-              glitch
-              size="lg"
-              of="twitter"
-              to="https://www.twitter.net/LisaDezaki"
-            />
+            <GlitchEffect onHover>
+              <Icon
+                glitch
+                size="lg"
+                of="twitter"
+                to="https://www.twitter.net/LisaDezaki"
+              />
+            </GlitchEffect>
 
-            <Icon
-              glitch
-              size="lg"
-              of="linkedin"
-              to="https://www.linkedin.com/in/lisa-dezaki-8b9088196/"
-            />
+            <GlitchEffect onHover>
+              <Icon
+                glitch
+                size="lg"
+                of="linkedin"
+                to="https://www.linkedin.com/in/lisa-dezaki-8b9088196/"
+              />
+            </GlitchEffect>
 
-            <Icon
-              glitch
-              size="lg"
-              of="telegram-plane"
-              to="https://t.me/LisaDezaki"
-            />
+            <GlitchEffect onHover>
+              <Icon
+                glitch
+                size="lg"
+                of="telegram-plane"
+                to="https://t.me/LisaDezaki"
+              />
+            </GlitchEffect>
 
           </div>
         </section>
+
         <Scrollspy
           items={projects.map(p => p.id)}
           componentTag="div"
@@ -175,7 +190,9 @@ class Home extends Component {
             </a>
           ))}
         </Scrollspy>
+
         <Footer />
+
       </div>
     );
   }

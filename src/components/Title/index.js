@@ -2,9 +2,9 @@ import React from "react";
 import cx from "classnames";
 import css from "./title.module.scss";
 
-const Title = ({ children, className, glitch, style }) => (
+const Title = ({ children, className, style }) => (
   <h4
-    className={cx(css.title, glitch ? css.glitch : null, className)}
+    className={cx(css.title, className)}
     data-text={children}
     style={style}
   >
