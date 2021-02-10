@@ -3,23 +3,15 @@
 $btnSm: 32px;
 $btnMd: 44px;
 $btnLg: 56px;
-// $btnHeight: 40px;
 
 .button {
   @include font(label);
   background-color: $color-text;
-  // border-radius: $btnHeight * 0.5;
   border: none;
   color: white;
   cursor: pointer;
-  // height: $btnHeight;
   overflow: hidden;
-  // padding: 1rem 2rem;
   position: relative;
-
-  // &> *:not(a):not(button) {
-  //   pointer-events: none;
-  // }
 
   &.size--sm {
     border-radius: $btnSm / 2;
@@ -42,7 +34,6 @@ $btnLg: 56px;
   .buttonLink {
     @include absolute(0,0,0,0);
     @include flex(c,m,row);
-    // background-color: red;
     color: transparent;
     z-index: 99;
   }

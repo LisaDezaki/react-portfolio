@@ -15,7 +15,6 @@ class Button extends Component {
   buttonHover = () => {
     this.setState({ hover: true });
   };
-  
   buttonUnhover = () => {
     this.setState({ hover: false });
   };

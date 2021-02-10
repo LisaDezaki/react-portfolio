@@ -82,7 +82,7 @@ const socialMedia = [
   {
     name: "Twitter",
     icon: "twitter",
-    link: "https://www.twitter.net/LisaDezaki"
+    link: "https://www.twitter.com/LisaDezaki"
   },
   {
     name: "LinkedIn",
