@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.scss";
 import { Footer, ProjectHeader } from "../../components";
-import img_fet_lg from "../../img/project/fet/fet_lg.png";
+import img_fet_lg from "../../img/project/fet/fet_lg.jpg";
 import css from "../project.module.scss";
 
 class ProjectFet extends Component {
