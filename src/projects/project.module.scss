@@ -58,4 +58,16 @@ article {
   .right {
     align-self: flex-end;
   }
+
+  .sm {
+    @include bp-min($bp-md) {
+      display: none;
+    }
+  }
+
+  .lg {
+    @include bp-max($bp-md) {
+      display: none;
+    }
+  }
 }

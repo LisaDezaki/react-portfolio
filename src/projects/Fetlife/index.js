@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.scss";
 import { Footer, ProjectHeader } from "../../components";
+import img_fet_sm from "../../img/project/fet/fet_sm.jpg";
 import img_fet_lg from "../../img/project/fet/fet_lg.jpg";
 import css from "../project.module.scss";
 
@@ -19,7 +20,8 @@ class ProjectFet extends Component {
           label="App Design"
         />
         <div className={css.body}>
-          <img src={img_fet_lg} alt="fetlife-app-design" className={css.left} />
+          <img src={img_fet_sm} alt="fetlife-app-design" className={css.sm} />
+          <img src={img_fet_lg} alt="fetlife-app-design" className={css.lg} />
         </div>
         <Footer bg="#1b1b1b" color="#b51e26" />
       </article>
